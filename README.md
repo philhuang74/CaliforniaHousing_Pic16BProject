@@ -10,3 +10,14 @@ I consider “Full success” as our group achieving two goals. The first one is
 
 Resources Required:
 What particular risks might be applicable for your project?
+
+For now, I found data from the Zillow website. And I will find more data such as from the California public schools and merge them with the data I found on Zillow. The particular risk that is applicable to the project is that at the end, we are not able to identify structural inequalities, but merely create cool plots.
+
+Tools/Skills Required:
+We need both supervised and unsupervised machine learning methods, database management, complex visualization. Feature selection might be the most important. With very predicative features, a linear regression might even be very predicative.
+
+Risks:
+It turns out that the data doesn’t exist and we need to change plans or change the direction we want to address structural inequalities. I am also not too sure how much data we need to deal with and is available to us. If we have a huge dataset, machine learning methods like boosting are very time consuming.
+
+Ethics:
+If we are predicting housing prices, it will be very important not to have race as a latent variable factored into our machine learning algorithm, as neighborhoods in the United States are very segregated. Rather we should focus on areas with development, job opportunities, and school quality. Then again, these variables could potentially lead to predicting that housing prices in certain neighborhoods to be lower.
