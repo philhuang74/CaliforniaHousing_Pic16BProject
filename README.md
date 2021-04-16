@@ -21,3 +21,8 @@ It turns out that the data doesn’t exist and we need to change plans or change
 
 Ethics:
 If we are predicting housing prices, it will be very important not to have race as a latent variable factored into our machine learning algorithm, as neighborhoods in the United States are very segregated. Rather we should focus on areas with development, job opportunities, and school quality. Then again, these variables could potentially lead to predicting that housing prices in certain neighborhoods to be lower.
+
+Tentative Timeline: 
+By Week 2, we want to have found our datasets and be able to merge them into a database. 
+By Week 4, we would have created machine learning models to predict housing prices and what features lead to the worth of a house.
+By Week 6, we would have created graphs and plots to tell the story of why housing prices are the way they are, and where the housing prices could go in the future.
