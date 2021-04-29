@@ -1,0 +1,85 @@
+ID Race,Race,ID Ethnicity,Ethnicity,ID Year,Year,Hispanic Population Moe,Geography,ID Geography,Slug Geography,Population,share
+0,"White Alone",0,"Not Hispanic or Latino",2018,"2018",6952,"California","04000US06","california",14495479,0.3664449404650929
+0,"White Alone",1,"Hispanic or Latino",2018,"2018",66202,"California","04000US06","california",9039909,0.22852842015878588
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2018,"2018",12343,"California","04000US06","california",2179078,0.05508697628955853
+1,"Black or African American Alone",1,"Hispanic or Latino",2018,"2018",9144,"California","04000US06","california",104772,0.0026486306042324444
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2018,"2018",6225,"California","04000US06","california",139116,0.003516845103065712
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2018,"2018",11000,"California","04000US06","california",163676,0.004137720600717268
+3,"Asian Alone",0,"Not Hispanic or Latino",2018,"2018",20288,"California","04000US06","california",5741886,0.1451545736037664
+3,"Asian Alone",1,"Hispanic or Latino",2018,"2018",6521,"California","04000US06","california",79699,0.002014786493783851
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2018,"2018",5343,"California","04000US06","california",143302,0.0036226669610937823
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2018,"2018",2429,"California","04000US06","california",12437,0.000314406700500505
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2018,"2018",8288,"California","04000US06","california",100696,0.00254558954037138
+5,"Some Other Race Alone",1,"Hispanic or Latino",2018,"2018",69855,"California","04000US06","california",5352533,0.13531175041007235
+6,"Two or More Races",0,"Not Hispanic or Latino",2018,"2018",23107.444687805702,"California","04000US06","california",1217346,0.030774442327529773
+6,"Two or More Races",1,"Hispanic or Latino",2018,"2018",21671.96550846277,"California","04000US06","california",787116,0.019898250741429244
+0,"White Alone",0,"Not Hispanic or Latino",2017,"2017",7788,"California","04000US06","california",14616636,0.36969836571649095
+0,"White Alone",1,"Hispanic or Latino",2017,"2017",67715,"California","04000US06","california",8565133,0.21663778671401446
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2017,"2017",16842,"California","04000US06","california",2164239,0.05474006613559322
+1,"Black or African American Alone",1,"Hispanic or Latino",2017,"2017",9806,"California","04000US06","california",107678,0.002723498117051031
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2017,"2017",6486,"California","04000US06","california",147880,0.0037403267292251572
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2017,"2017",10715,"California","04000US06","california",165979,0.004198104477887898
+3,"Asian Alone",0,"Not Hispanic or Latino",2017,"2017",18800,"California","04000US06","california",5679986,0.14366380482434868
+3,"Asian Alone",1,"Hispanic or Latino",2017,"2017",7130,"California","04000US06","california",85319,0.0021579722491936785
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2017,"2017",4791,"California","04000US06","california",137520,0.003478291397099294
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2017,"2017",3184,"California","04000US06","california",16403,0.0004148808448707077
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2017,"2017",9425,"California","04000US06","california",107223,0.0027119898085455033
+5,"Some Other Race Alone",1,"Hispanic or Latino",2017,"2017",64662.99999999999,"California","04000US06","california",5804580,0.1468151590879481
+6,"Two or More Races",0,"Not Hispanic or Latino",2017,"2017",27718.420048769014,"California","04000US06","california",1205863,0.030499875647035678
+6,"Two or More Races",1,"Hispanic or Latino",2017,"2017",24211.446259982073,"California","04000US06","california",732214,0.018519878250695627
+0,"White Alone",0,"Not Hispanic or Latino",2016,"2016",8629,"California","04000US06","california",14725729,0.3751776464198729
+0,"White Alone",1,"Hispanic or Latino",2016,"2016",62078.00000000001,"California","04000US06","california",8694505,0.22151595501219784
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2016,"2016",12799,"California","04000US06","california",2160958,0.055056230931059214
+1,"Black or African American Alone",1,"Hispanic or Latino",2016,"2016",8128.999999999999,"California","04000US06","california",104322,0.0026578841991329585
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2016,"2016",5781,"California","04000US06","california",132153,0.0033669539557142102
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2016,"2016",13197,"California","04000US06","california",157980,0.0040249664095686885
+3,"Asian Alone",0,"Not Hispanic or Latino",2016,"2016",16185,"California","04000US06","california",5518226,0.14059168432971633
+3,"Asian Alone",1,"Hispanic or Latino",2016,"2016",8354,"California","04000US06","california",83848,0.002136253851813618
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2016,"2016",4940,"California","04000US06","california",137019,0.0034909284243112557
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2016,"2016",3254,"California","04000US06","california",13502,0.00034399985100643394
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2016,"2016",10984,"California","04000US06","california",105389,0.002685068900734489
+5,"Some Other Race Alone",1,"Hispanic or Latino",2016,"2016",64493,"California","04000US06","california",5536736,0.14106327648214775
+6,"Two or More Races",0,"Not Hispanic or Latino",2016,"2016",21376.40786006854,"California","04000US06","california",1189767,0.030312521902856757
+6,"Two or More Races",1,"Hispanic or Latino",2016,"2016",20589.548246622606,"California","04000US06","california",689883,0.01757662932986755
+0,"White Alone",0,"Not Hispanic or Latino",2015,"2015",7888,"California","04000US06","california",14815122,0.3784695588570625
+0,"White Alone",1,"Hispanic or Latino",2015,"2015",63463.00000000001,"California","04000US06","california",9009132,0.23014877729154343
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2015,"2015",12770,"California","04000US06","california",2192844,0.05601875579035774
+1,"Black or African American Alone",1,"Hispanic or Latino",2015,"2015",7985,"California","04000US06","california",84385,0.0021557131776676034
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2015,"2015",6180,"California","04000US06","california",135866,0.0034708553249628085
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2015,"2015",10689,"California","04000US06","california",146911,0.003753012723165554
+3,"Asian Alone",0,"Not Hispanic or Latino",2015,"2015",18924,"California","04000US06","california",5476958,0.1399152756311193
+3,"Asian Alone",1,"Hispanic or Latino",2015,"2015",6554,"California","04000US06","california",71978,0.0018387619020223825
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2015,"2015",4915,"California","04000US06","california",143408,0.0036635245053381013
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2015,"2015",3705,"California","04000US06","california",14146,0.00036137605748990835
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2015,"2015",9185,"California","04000US06","california",87813,0.002243285433080823
+5,"Some Other Race Alone",1,"Hispanic or Latino",2015,"2015",62590.99999999999,"California","04000US06","california",5212484,0.1331589790505604
+6,"Two or More Races",0,"Not Hispanic or Latino",2015,"2015",25964.081362528505,"California","04000US06","california",1108262,0.02831184449497249
+6,"Two or More Races",1,"Hispanic or Latino",2015,"2015",20224.85483260634,"California","04000US06","california",645509,0.016490279760656954
+0,"White Alone",0,"Not Hispanic or Latino",2014,"2014",7495,"California","04000US06","california",14849129,0.3826848527801044
+0,"White Alone",1,"Hispanic or Latino",2014,"2014",55289.00000000001,"California","04000US06","california",8964915,0.23103962373558404
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2014,"2014",13276,"California","04000US06","california",2155733,0.05555654919141808
+1,"Black or African American Alone",1,"Hispanic or Latino",2014,"2014",7457,"California","04000US06","california",103948,0.0026788995554410154
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2014,"2014",6218,"California","04000US06","california",135245,0.003485471296952516
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2014,"2014",10826,"California","04000US06","california",151386,0.003901449648862831
+3,"Asian Alone",0,"Not Hispanic or Latino",2014,"2014",16978,"California","04000US06","california",5329431,0.13734761935442305
+3,"Asian Alone",1,"Hispanic or Latino",2014,"2014",5627,"California","04000US06","california",68659,0.0017694478448553573
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2014,"2014",4310,"California","04000US06","california",137838,0.0035522968880871077
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2014,"2014",2660,"California","04000US06","california",12234,0.000315288963339991
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2014,"2014",8641,"California","04000US06","california",96073,0.002475948714644675
+5,"Some Other Race Alone",1,"Hispanic or Latino",2014,"2014",54503.99999999999,"California","04000US06","california",5018120,0.1293246569164358
+6,"Two or More Races",0,"Not Hispanic or Latino",2014,"2014",22931.720410819595,"California","04000US06","california",1110281,0.028613646027962115
+6,"Two or More Races",1,"Hispanic or Latino",2014,"2014",21180.695219940255,"California","04000US06","california",669508,0.017254249081889054
+0,"White Alone",0,"Not Hispanic or Latino",2013,"2013",6586,"California","04000US06","california",14884539,0.388300550334271
+0,"White Alone",1,"Hispanic or Latino",2013,"2013",59818,"California","04000US06","california",8856480,0.23104350480888017
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2013,"2013",10863,"California","04000US06","california",2167357,0.05654094600248181
+1,"Black or African American Alone",1,"Hispanic or Latino",2013,"2013",9345,"California","04000US06","california",101664,0.0026521605505674933
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2013,"2013",6668,"California","04000US06","california",139821,0.0036475816448388564
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2013,"2013",10029,"California","04000US06","california",138556,0.0036145809455109933
+3,"Asian Alone",0,"Not Hispanic or Latino",2013,"2013",16723,"California","04000US06","california",5147620,0.13428858488070744
+3,"Asian Alone",1,"Hispanic or Latino",2013,"2013",5658,"California","04000US06","california",62616,0.0016334954854652006
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2013,"2013",4487,"California","04000US06","california",132957,0.0034685169806598424
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2013,"2013",2345,"California","04000US06","california",9825,0.0002563097793646288
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2013,"2013",8781,"California","04000US06","california",81088,0.002115383958180053
+5,"Some Other Race Alone",1,"Hispanic or Latino",2013,"2013",58658,"California","04000US06","california",4880288,0.12731455883112933
+6,"Two or More Races",0,"Not Hispanic or Latino",2013,"2013",21839.574102990195,"California","04000US06","california",1059812,0.027647855459336994
+6,"Two or More Races",1,"Hispanic or Latino",2013,"2013",22455.054130417946,"California","04000US06","california",669898,0.01747597033860622
