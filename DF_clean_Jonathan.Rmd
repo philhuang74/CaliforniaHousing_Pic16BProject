@@ -1,0 +1,11 @@
+---
+title: "R_Jonathan"
+author: "Yiran Liu"
+date: "5/7/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+read.csv("main_crime_school.csv")
+```
