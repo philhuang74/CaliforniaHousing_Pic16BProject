@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Ask{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+      <label for="name">What would you like us to call you?</label>
+      <input name="name" id="name">
+      <br>
+      <label for="pic16b">Are you in PIC16B?</label>
+      <input type="radio" name="student" id="yes" value="yes">
+      <label for="yes">Yes</label>
+      <input type="radio" name="student" id="no" value="no">
+      <label for="No">No</label>
+      <br>
+      <input type="submit" value="Submit form">
+  </form>
+  {% if name %}
+  <br>
+  {% if student == "yes" %}
+  <b>Hello {{name}}!  Do you like PIC16B?</b>
+  {% else %}
+  <b>Hello {{name}}!  Do you want to take PIC16B?</b>
+  {% endif %}
+  {% endif %}
+
+
+
+
+
+
+  <label for="pic16b">How do you wish about the population density in your ideal housing location?
+  (scale:0&1-5, 1 means you wish to have the house in the most populated city,0 means you don't care)</label>
+  <br>
+  <input type="radio" name="Q1" id="1" value="1">
+  <label for="1">1</label>
+  <input type="radio" name="Q1" id="2" value="2">
+  <label for="2">2</label>
+  <input type="radio" name="Q1" id="3" value="3">
+  <label for="3">3</label>
+  <input type="radio" name="Q1" id="4" value="4">
+  <label for="4">4</label>
+  <input type="radio" name="Q1" id="5" value="5">
+  <label for="5">5</label>
+
+          <br>
+
+        <br>
+
+        <label for="pic16b">How do you wish about the crime rate in your ideal housing location?
+  (scale:0&1-5, 5 means you wish to have the house in cities of lowest crime rate,0 means you don't care)</label>
+  <br>
+  <input type="radio" name="Q2" id="1" value="1">
+  <label for="1">1</label>
+  <input type="radio" name="Q2" id="2" value="2">
+  <label for="2">2</label>
+  <input type="radio" name="Q2" id="3" value="3">
+  <label for="3">3</label>
+  <input type="radio" name="Q2" id="4" value="4">
+  <label for="4">4</label>
+  <input type="radio" name="Q2" id="5" value="5">
+  <label for="5">5</label>
+
+          <br>
+          <br>
+
+
+        <label for="pic16b">How do you wish about the population density in your ideal housing location?
+  (scale:0&1-5, 1 means you wish to have the house in the most populated city,0 means you don't care)</label>
+  <br>
+        <input type="radio" name="Q3" id="1" value="1">
+        <label for="1">1</label>
+        <input type="radio" name="Q3" id="2" value="2">
+        <label for="2">2</label>
+        <input type="radio" name="Q3" id="3" value="3">
+        <label for="3">3</label>
+        <input type="radio" name="Q3" id="4" value="4">
+        <label for="4">4</label>
+        <input type="radio" name="Q3" id="5" value="5">
+        <label for="5">5</label>
+
+
+
+
+  <form method="post">
+        <br>
+        <br>
+        <label for="pic16b">Where do you wish to have your ideal housing location?
+  (1: Northern California, 2: Southern California)</label>
+        <input type="radio" name="Q4" id="1" value="1">
+        <label for="1">1</label>
+        <input type="radio" name="Q4" id="2" value="2">
+        <label for="2">2</label>
+
+
+        <br>
+        <br>
+
+
+
+          <br>
+          <br>
+
+  <label for="name">What is your minimum budget for your ideal housing?</label>
+      <input name="minb" id="minb">
+      <br>
+      <br>
+
+    <label for="name">What is your maximum budget for your ideal housing?</label>
+        <input name="maxb" id="maxb">
+
+
+  <br>
+        <input type="submit" value="Submit form">
+       </form>
+    {% if minb %}
+    <br>
+    {% if Q4 == "1" %}
+    <b>Hello {{minb}}!  Do you like PIC16B?</b>
+    {% else %}
+    <b>Hello {{minb}}!  Do you want to take PIC16B?</b>
+    {% endif %}
+    {% endif %}
+
+
+    
+{% endblock %}
+
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import numpy as np
+import re
+
+data = pd.read_csv('Final_data_set.csv')
+data.head()
+
+def query_function():
+    #read in dataset
+    data = pd.read_csv('Final_data_set.csv')
+    data1 = data
+    #sort based on user inputs
+    density = int(input("How do you wish about the population density in your ideal housing location?\n(scale:0&1-5, 1 means you wish to have the house in the most populated city,0 means you don't care)\n"))
+    if density == 0:
+        data1 = data1
+    else:
+        data1 = data1[data1.label_density == density]
+
+    crime = int(input("How do you wish about the crime rate in your ideal housing location?\n(scale:0&1-5, 5 means you wish to have the house in cities of lowest crime rate,0 means you don't care)\n"))
+    if density == 0:
+        data1 = data1
+    else:
+        data1 = data1[data1.crime_rate == crime]
+
+    edu = int(input("Do you wish to have great public high schools your ideal housing location?\n(scale:0&1-5, 1 means you wish to have the greatest public education in the housing area,0 means you don't care)\n"))
+    if density == 0:
+        data1 = data1
+    else:
+        data1 = data1[data1.crime_rate <= edu]
+
+    lat = int(input("Where do you wish to have your ideal housing location?\n(1: Northern California, 2: Southern California)\n"))
+    separation_lat = 35 # THIS IS THE LATITUDE THAT SEPERATES CALIFORNIA INTO NORTH AND SOUTH
+    if lat == 1:
+        data1 = data1[data1.Latitude >= separation_lat]
+    if lat == 2:
+        data1 = data1[data1.Latitude <= separation_lat]
+
+    print("What are your budgets for your ideal housing?")
+    max1 = int(input("Maximum total amount you are willing to pay in dollars:"))
+    min1 = int(input("Minimum total amount you are willing to pay in dollars:"))
+    data1 = data1[data1['X2021.03.31'] <= max1]
+    data1 = data1[data1['X2021.03.31'] >= min1]
+
+    #only return the necessary info for users
+    data1 = data1[['County','Zip','City_x','Population_density','Crime_rate_Per1000',
+                  'Latitude','Longitude','X2021.03.31']]
+
+    return data1
+
+query_function()
