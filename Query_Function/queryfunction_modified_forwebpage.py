@@ -1,7 +1,7 @@
-
-def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,minb,maxb):
+import pandas as pd
+def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,Min_ans,Max_ans):
     #read in dataset
-    data = pd.read_csv('Final_data_set.csv')
+    data = pd.read_csv('/Users/jonathanliu/Desktop/pic16b-flask/app/Final_data_set.csv')
     data1 = data
     #sort based on user inputs
 
@@ -30,11 +30,14 @@ def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,minb,maxb):
         data1 = data1[data1.Latitude <= separation_lat]
 
 
-    data1 = data1[data1['X2021.03.31'] <= minb]
-    data1 = data1[data1['X2021.03.31'] >= maxb]
+    data1 = data1[data1['X2021.03.31'] <= Max_ans]
+    data1 = data1[data1['X2021.03.31'] >= Min_ans]
 
     #only return the necessary info for users
     data1 = data1[['County','Zip','City_x','Population_density','Crime_rate_Per1000',
                   'Latitude','Longitude','X2021.03.31']]
 
     return data1
+
+
+query_function(int("3"),int("2"),int("4"),int("2"),int("100"),int("100000000"))
