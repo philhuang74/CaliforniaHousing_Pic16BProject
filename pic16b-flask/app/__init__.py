@@ -3,9 +3,13 @@ from flask import Flask, g, render_template, request
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
+from .summmm import sum_haha
 from .housewares import housewares_bp, close_hw_db
 from .auth import auth_bp, close_auth_db, init_auth_db_command
+from .queryfunction import query_function
+
 
 # Create web app, run with flask run
 # (set "FLASK_ENV" variable to "development" first!!!)
@@ -36,7 +40,23 @@ def ask():
         return render_template('ask.html')
     else:
         try:
-            return render_template('ask.html', name=request.form['name'], student=request.form['student'])
+            Q1_ans = request.form['Q1']
+            Q2_ans = request.form['Q2']
+            Q3_ans = request.form['Q3']
+            Q4_ans = request.form['Q4']
+            Min_ans = request.form['minb']
+            Max_ans = request.form['maxb']
+            desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
+
+
+
+
+
+
+
+
+
+            return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values)
         except:
             return render_template('ask.html')
 
