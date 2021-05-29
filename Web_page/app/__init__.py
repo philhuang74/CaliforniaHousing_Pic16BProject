@@ -5,16 +5,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+
 from .housewares import housewares_bp, close_hw_db
 from .auth import auth_bp, close_auth_db, init_auth_db_command
 from .queryfunction import query_function
 
-# Note!
-# I just made sure that the one I pushed is going to work if you guy pull it.
-# Now, the only problem is that the csv file is not going to be read in when calling the modified query function
-# in the main app because the path I specified when read in the final dataset  is my local path.
-# I think there must be a specific file that we can put the csv file in so when calling the query function inside of main app, it can be detected with no problem. I could not figure this out, so I had to specify where the csv is located.
-# If you guys change the path to your own local path, the webpage will display properly.
 
 # Create web app, run with flask run
 # (set "FLASK_ENV" variable to "development" first!!!)
@@ -66,40 +61,40 @@ def ask():
             return render_template('ask.html')
 
 # File uploads and interfacing with complex Python
-#
-# @app.route('/submit/', methods=['POST', 'GET'])
-# def submit():
-#     if request.method == 'GET':
-#         return render_template('submit.html')
-#     else:
-#         try:
-#             image = request.files['image']
-#             img = plt.imread(image)
-#             if img.shape != (28, 28, 3):
-#                 raise Exception('invalid size')
-#
-#             img = (img[:,:,0] + img[:,:,1] + img[:,:,2])/3
-#             img = 255*img/np.max(img)
-#             img = 255 - img
-#
-#             img = img.reshape((1, 28, 28))
-#             model = tf.keras.models.load_model('mnist_model')
-#
-#             d = np.argmax(model.predict(img))
-#
-#             return render_template('submit.html', digit=d)
-#         except:
-#             return render_template('submit.html', error=True)
+
+@app.route('/submit/', methods=['POST', 'GET'])
+def submit():
+    if request.method == 'GET':
+        return render_template('submit.html')
+    else:
+        try:
+            image = request.files['image']
+            img = plt.imread(image)
+            if img.shape != (28, 28, 3):
+                raise Exception('invalid size')
+
+            img = (img[:,:,0] + img[:,:,1] + img[:,:,2])/3
+            img = 255*img/np.max(img)
+            img = 255 - img
+
+            img = img.reshape((1, 28, 28))
+            model = tf.keras.models.load_model('mnist_model')
+
+            d = np.argmax(model.predict(img))
+
+            return render_template('submit.html', digit=d)
+        except:
+            return render_template('submit.html', error=True)
 
 # Blueprints and interfacing with SQLite
 
-# app.register_blueprint(housewares_bp)
-# app.teardown_appcontext(close_hw_db)
+app.register_blueprint(housewares_bp)
+app.teardown_appcontext(close_hw_db)
 
 # Sessions and logging in
 
 app.secret_key = b'h\x13\xce`\xd9\xde\xbex\xbd\xc3\xcc\x07\x04\x08\x88~'
 
-# app.register_blueprint(auth_bp)
-# app.teardown_appcontext(close_auth_db)
-# app.cli.add_command(init_auth_db_command) # run with flask init-auth-db
+app.register_blueprint(auth_bp)
+app.teardown_appcontext(close_auth_db)
+app.cli.add_command(init_auth_db_command) # run with flask init-auth-db
