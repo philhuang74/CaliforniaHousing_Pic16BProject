@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,Min_ans,Max_ans):
     #read in dataset
-    data = pd.read_csv('/Users/jonathanliu/Desktop/pic16b-flask/app/Final_data_set.csv')
+    data = pd.read_csv(os.path.join(os.path.dirname(__file__),'Final_data_set.csv'))
     data1 = data
     #sort based on user inputs
 
