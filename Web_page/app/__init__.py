@@ -5,16 +5,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+
 from .housewares import housewares_bp, close_hw_db
 from .auth import auth_bp, close_auth_db, init_auth_db_command
 from .queryfunction import query_function
 
-# Note!
-# I just made sure that the one I pushed is going to work if you guy pull it.
-# Now, the only problem is that the csv file is not going to be read in when calling the modified query function
-# in the main app because the path I specified when read in the final dataset  is my local path.
-# I think there must be a specific file that we can put the csv file in so when calling the query function inside of main app, it can be detected with no problem. I could not figure this out, so I had to specify where the csv is located.
-# If you guys change the path to your own local path, the webpage will display properly.
 
 # Create web app, run with flask run
 # (set "FLASK_ENV" variable to "development" first!!!)
