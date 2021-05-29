@@ -1,8 +1,24 @@
 # Pic16BProject
 
-Our goals for the housing project has changed in that we focused on creating the website where the user can input there preference on California housing, and get a dataframe of area suggestions that fit those criteria. We have a main page in which we wish to post some interesting graphs and findings that we have observed from the California database we have created. We have a time series file that can generate housing predictions using Facebook Prophet, and we are trying to implement that to our website. Other than the main page, the ask page on our website contains the questions that the user can input and we will retrieve the recommendations from our database. To run the website, you have to run flask since the website is local, and we have created a path that will not cause problems retrieving the information from the database. Note that the minimum budget must be a smaller number than the maximum budget. Also, if the questionnaire is submitted without filling out all the information, nothing will be returned.
+**Project Structure:**
+
+**Analysis part:** the summary of result can be found in the Housing Project Summary Report.pdf
+
+1. The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. The code, datasets, and plots can be found in social_inequality_Related folder.
+
+2. We also looked at the discussion of the overall US housing market. We tried to find what are the topics that people may discuss, and what are people’s common sentiments. The code, datasets, and plots can be found in Reddit Sentiment & Topic Modeling on House folder.
+
+**Besides all the analysis part, we have our Main Product: Housing Website**
+
+1. We incorporated data in crime rates, city population, public high schools, housing locations, people’s budgets, longitude and latitude, and future housing price predictions to shuffle our the ideal locations for people who wish to invest in houses. We focused on creating the website where the user can input there preference on California housing, and get a dataframe of area suggestions that fit those criteria. 
+
+2. For our website, we have a main page in which we wish to post some interesting graphs and findings that we have observed from the California database we have created. We have a time series file that can generate housing predictions using Facebook Prophet, and we are trying to implement that to our website. Other than the main page, the ask page on our website contains the questions that the user can input and we will retrieve the recommendations from our database. To run the website, you have to run flask since the website is local, and we have created a path that will not cause problems retrieving the information from the database. Note that the minimum budget must be a smaller number than the maximum budget. Also, if the questionnaire is submitted without filling out all the information, nothing will be returned. 
+
+*Remark on the progress of project:*
+we have not combined the prediction plots into the results of our function. Ideally by the end of the project, the function will return a prediction plot that contains the houses past prices and future prices for each row of the generated dataframe. 
 
 
+**Project Proposal:**
 
 **Abstract:**
 Every person will be interested in housing prices at least once in their life. There are many reasons for owning a house: having a place to live, using it as a rental property for income, or other potential reasons. My teammates and I want to see throughout the years, which geographic areas in California (or on a smaller scale) are the most dynamic in pricing and what the reasons are behind it. What are the social, economic, political sensitivities behind this? I believe we can understand and visualize the data from many angles. One very interesting angle will be how covid has influenced the housing market in California. This project can potentially both help predict housing price in new or existing neighborhoods and identify structural inequalities.
