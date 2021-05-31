@@ -3,7 +3,8 @@
 To run our local website, follow these instructions:
 In the terminal,
 1. Make 'Web_page' the current directory:
-cd Web_page
+cd Pic16BProject/Web_page
+
 2. Activate the customized PIC16B environment:
 conda activate PIC16
 3. Enable the Flask debug mode by setting the environment to development:
