@@ -11,6 +11,7 @@ conda activate PIC16
 export FLASK_ENV=development
 4. Start the development server:
 flask run
+5. In your web browser, go to http://localhost:5000/
 
 **Project Structure:**
 
