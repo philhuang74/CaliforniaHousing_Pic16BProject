@@ -2,6 +2,7 @@
 
 **Project Structure:**
 
+<<<<<<< Updated upstream
 **Analysis part:** the summary of result can be found in the Housing Project Summary Report.pdf
 
 1. The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. The code, datasets, and plots can be found in social_inequality_Related folder.
@@ -19,6 +20,18 @@ we have not combined the prediction plots into the results of our function. Idea
 
 
 **Project Proposal:**
+=======
+To run our local website, follow these instructions:
+In the terminal,
+1. Make 'Web_page' the current directory:
+cd Web_page
+2. Activate the customized PIC16B environment:
+conda activate PIC16
+3. Enable the Flask debug mode by setting the environment to development:
+export FLASK_ENV=development
+4. Start the development server:
+flask run
+>>>>>>> Stashed changes
 
 **Abstract:**
 Every person will be interested in housing prices at least once in their life. There are many reasons for owning a house: having a place to live, using it as a rental property for income, or other potential reasons. My teammates and I want to see throughout the years, which geographic areas in California (or on a smaller scale) are the most dynamic in pricing and what the reasons are behind it. What are the social, economic, political sensitivities behind this? I believe we can understand and visualize the data from many angles. One very interesting angle will be how covid has influenced the housing market in California. This project can potentially both help predict housing price in new or existing neighborhoods and identify structural inequalities.
