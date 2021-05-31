@@ -15,7 +15,6 @@ flask run
 
 **Project Structure:**
 
-<<<<<<< Updated upstream
 **Analysis part:** the summary of result can be found in the Housing Project Summary Report.pdf
 
 1. The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. The code, datasets, and plots can be found in social_inequality_Related folder.
