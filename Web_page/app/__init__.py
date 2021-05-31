@@ -20,6 +20,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
+    return "hi there "
     return render_template('main_better.html')
 
 # Show url matching

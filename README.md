@@ -1,7 +1,44 @@
 # Pic16BProject
 
-Our goals for the housing project has changed in that we focused on creating the website where the user can input there preference on California housing, and get a dataframe of area suggestions that fit those criteria. We have a main page in which we wish to post some interesting graphs and findings that we have observed from the California database we have created. We have a time series file that can generate housing predictions using Facebook Prophet, and we are trying to implement that to our website. Other than the main page the ask page on our website contains the questions that the user can input and we will retrieve the recommendations from our database. 
+To run our local website, follow these instructions:
+In the terminal,
 
+1. Make 'Web_page' the current directory in cmd:
+cd Pic16BProject/Web_page
+
+2. Activate the customized PIC16B environment:
+conda activate PIC16
+
+3. Enable the Flask debug mode by setting the environment to development.*Remark: on Windows, you might use `set FLASK_ENV = development` in cmd.*:
+export FLASK_ENV=development
+
+4. Start the development server:
+flask run
+
+5. In your web browser, go to http://localhost:5000/ or the recommended server stated in terminal.
+
+*Remark: in some cases on Windows, try to directly use `activate PIC16/Or any other environment in your anaconda` in stead of using `conda activate PIC16`. You can list all discoverable environments with `conda info --envs` in cmd.* 
+
+
+**Project Structure:**
+
+**Analysis part:** the summary of result can be found in the Housing Project Summary Report.pdf
+
+1. The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. The code, datasets, and plots can be found in social_inequality_Related folder.
+
+2. We also looked at the discussion of the overall US housing market. We tried to find what are the topics that people may discuss, and what are people’s common sentiments. The code, datasets, and plots can be found in Reddit Sentiment & Topic Modeling on House folder.
+
+**Besides all the analysis part, we have our Main Product: Housing Website**
+
+1. We incorporated data in crime rates, city population, public high schools, housing locations, people’s budgets, longitude and latitude, and future housing price predictions to shuffle our the ideal locations for people who wish to invest in houses. We focused on creating the website where the user can input there preference on California housing, and get a dataframe of area suggestions that fit those criteria. 
+
+2. For our website, we have a main page in which we wish to post some interesting graphs and findings that we have observed from the California database we have created. We have a time series file that can generate housing predictions using Facebook Prophet, and we are trying to implement that to our website. Other than the main page, the ask page on our website contains the questions that the user can input and we will retrieve the recommendations from our database. To run the website, you have to run flask since the website is local, and we have created a path that will not cause problems retrieving the information from the database. Note that the minimum budget must be a smaller number than the maximum budget. Also, if the questionnaire is submitted without filling out all the information, nothing will be returned. 
+
+*Remark on the progress of project:*
+we have not combined the prediction plots into the results of our function. Ideally by the end of the project, the function will return a prediction plot that contains the houses past prices and future prices for each row of the generated dataframe. 
+
+
+**Project Proposal:**
 
 
 **Abstract:**
