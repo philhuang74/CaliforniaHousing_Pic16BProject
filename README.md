@@ -2,16 +2,23 @@
 
 To run our local website, follow these instructions:
 In the terminal,
-1. Make 'Web_page' the current directory:
+
+1. Make 'Web_page' the current directory in cmd:
 cd Pic16BProject/Web_page
 
 2. Activate the customized PIC16B environment:
 conda activate PIC16
-3. Enable the Flask debug mode by setting the environment to development:
+
+3. Enable the Flask debug mode by setting the environment to development.*Remark: on Windows, you might use `set FLASK_ENV = development` in cmd.*:
 export FLASK_ENV=development
+
 4. Start the development server:
 flask run
+
 5. In your web browser, go to http://localhost:5000/ or the recommended server stated in terminal.
+
+*Remark: in some cases on Windows, try to directly use `activate PIC16/Or any other environment in your anaconda` in stead of using `conda activate PIC16`. You can list all discoverable environments with `conda info --envs` in cmd.* 
+
 
 **Project Structure:**
 
