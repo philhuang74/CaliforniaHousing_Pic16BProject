@@ -19,6 +19,7 @@ flask run
 
 *Remark: in some cases on Windows, try to directly use `activate PIC16/Or any other environment in your anaconda` in stead of using `conda activate PIC16`. You can list all discoverable environments with `conda info --envs` in cmd.* 
 
+`.DS_Store` files are unique to each computer system, therefore they have been deleted to avoid merge conflicts and to ensure this project folder is usable for everyone. `ipynb_checkpoint` directories have also been deleted for better version control.
 
 **Project Structure:**
 
