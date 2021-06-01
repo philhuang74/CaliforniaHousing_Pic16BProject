@@ -33,8 +33,15 @@ $(document).ready(function() {
     Q4: {
       required: true
     },
+    minb: {
+      number: true
+    },
     maxb: {
-      min: function() {return parseFloat($('#minb').val());}
+      number: true,
+      min: function() {
+        if (isNaN(parseFloat($('#minb').val()))){return 0;}
+        return parseFloat($('#minb').val());
+      }
     }
   }
 });
