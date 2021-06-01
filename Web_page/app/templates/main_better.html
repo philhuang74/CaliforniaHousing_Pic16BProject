@@ -7,7 +7,22 @@
 {% block content %}
   <p>Welcome to our Housing Project Website!</p>
 
-  <p>We have created a database gathering data from Zillow to predict future housing prices.</p>
+  <p>Housing sales have been a hit after covid. According to CNBC,1 Sales in April 2021 were 33.9% higher than in April 2020. The supply of homes for sale at the end of April was down 20%. There were 1.16 million homes for sale, representing a 2.4-month supply at the current sales pace.
+      High demand and rock-bottom supply will continue to push prices higher.
+      The median price of an existing home sold in April was $341,600, an increase of 19.1% from April 2020. That is both the highest median price on record and the largest annual increase on record.
+      Much of that large increase in the median price is due to the mix of homes that are selling. There is far more activity on the higher end of the market, where supply is more plentiful, and very
+      little activity on the low end, where the shortage is most severe.</p>
+
+  <p> As an example, sales of homes priced between $100,000 and $250,000 were unchanged from a year earlier. Sales of homes priced between $750,000 and $1 million rose 146% from a year earlier, and sales of homes over $1 million jumped 212%. </p>
+
+  <p> Our Project: The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. We also looked at the discussion of the overall US housing market. We tried to find what are the topics that people may discuss, and what are people’s common sentiments.
+      Besides all the analysis part, we incorporated data in crime rates, city population, public high schools, housing locations, people’s budgets,
+        longitude and latitude to shuffle our the ideal locations for people who wish to invest in houses.
+      We have also added housing prices data from Zillow to predict future housing prices so that users could have a sense on how the house's future price would behave for investment purpose.  </p>
+
+
+  <p>The first plot is the overall overview of how the house prices would change in California</p>
+
   <!-- <p>This website will teach us how to make a website using Python.  To do so, we need to use something called a web framework.  We have multiple options for this.  Two of the most popular options are Flask and Django.  We will be using Flask because it is simpler and easier to learn.  If you are doing a big project, you might find Django easier to manage.  Either way, the skills from one web framework are transferable to others, even though they may do things differently.</p>
 
   <p>A lot of the information here comes from the <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask documentation</a>, in particular the Quickstart and Tutorial sections.  You may want to give these a look if this this something you're interested in.</p>
@@ -30,6 +45,9 @@
   <p>In particular, after the next couple of discussions, we should know enough to make a website on our computer that we can access from our browser.  If you want to take this information and make a website out of it, great!  But <b>please be careful</b>.  There are <i>a lot</i> of ways for people to exploit insecure websites, and I don't know enough myself to teach you all the best safety practices.  I will point out potential issues as they arise in this demonstration, but you should be prepared to learn some more on your own if you want to make your website public.</p>
 
   <p>If you want to make an actual public website and want to learn more, feel free to reach out to me.  I can give more details and point you to good resources available online.</p> -->
-  {%include "Cali_Housing_Trend.html" %}  
+  {%include "Cali_Housing_Trend.html" %}
+  <p> This plot is the demonstration of California High School Ranking Overview</p>
   {%include "Cali_HighSchool_Ranking.html" %}
+
+  <p>The first analysis part: Racial Inequality in Housing</p>
 {% endblock %}
