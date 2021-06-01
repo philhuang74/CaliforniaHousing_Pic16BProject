@@ -79,11 +79,37 @@
       <li>Frequent Words in Reddit “House” Discussion</li>
    </ul>
  <p> We web scraped the house discussion from Reddit from 2013 to 2021/2/1 and did a vast series of data cleaning and preparation on the text data. Then by the 1-word frequency word cloud picture according to word frequency appeared in discussions, we surprisingly find that words related to music appear such as “song”, “mix”, “track”. By the 2-word word cloud, besides music, we find words such as “french house”, “tech house”, “new house”.</p>
-  <ul>
+<img src="{{url_for('static', filename='freqhouse.png')}}" align="middle" />
+<img src="{{url_for('static', filename='2gram.png')}}" align="middle" />
+
+   <ul>
       <li>Sentiments in “House” and sub “House” Discussions</li>
   </ul>
  <p>We then looked at the distribution of different emotions in house discussions:</p>
- <p> </p>
+ <p>We can see that Joy and Trust are the most frequent emotions, whereas disgust and surprise are the least frequent emotions.</p>
+    <img src="{{url_for('static', filename='housesentiment.png')}}" align="middle" />
+    <p> The first graph shows what are the words that appear in the sentiment of joy: we can see that when people discuss house with the emotion of joy, they mention “party”, “cheer”, “festival”. The second graph shows what are the adjective words that appear in the sentiment of “trust” in house discussions: they use words that are used in social relationships relating to houses, such as “recommend”, “advice”, “friend”, “hope”.</p>
+  <img src="{{url_for('static', filename='housesentiment1.png')}}" align="middle" />
+    <img src="{{url_for('static', filename='housesentiment2.png')}}" align="middle" />
+
+  <p> Then we subset the overall house discussion datasets into smaller datasets by searching for keywords important in housing, including “buy”, “sell”, “race”, “price”. When we find sentiments for each subset of House discussions, different compositions of sentiments for each sub dataset appear. The bar graphs on the left show the frequency of each sentiment in each dataset. The word cloud pictures on the right are the frequent words in the top sentiment for each dataset. In terms of buying and selling, people reveal more joyfulness than sadness, which might correspond to the earlier part where there are trends of selling and buying. Relating to races and prices, people show the top sentiment of “trust”, and descriptive words in the “trust“ relate to supportive social relationships such as “embrace”, “friend” and also housing quality such as “guarantee”, “proof”, “good”.</p>
+   <img src="{{url_for('static', filename='Race.png')}}" align="middle" /><img src="{{url_for('static', filename='Race1.png')}}" align="middle" />
+   <img src="{{url_for('static', filename='price.png')}}" align="middle" /><img src="{{url_for('static', filename='price1.png')}}" align="middle" />
+   <img src="{{url_for('static', filename='sell.png')}}" align="middle" /><img src="{{url_for('static', filename='sell1.png')}}" align="middle" />
+   <img src="{{url_for('static', filename='buy.png')}}" align="middle" /><img src="{{url_for('static', filename='buy1.png')}}" align="middle" />
+
+  <p>Topic Modeling in “House” Discussions </p>
+  <p>We first do topic modeling in the overall house discussions. We may summarize the first topic as “life in house”, the second topic as “music”, the third topic as “mood”.</p>
+
+<p>Then, when doing topic modeling under each sentiment we get from the overall house discussions, we have interesting topic modeling results in the following two sentiments: </p>
+<ul>
+      <li>Topic modeling by Sentiment Fear: the first topic may be related to houses equipments whereas the second topic is related to different types of houses. These two topics reveal that people may have negative feelings in either looking for houses decorations or experiencing different types of houses. The third topic is related to house tech and music.</li>
+</ul>
+
+<ul>
+      <li>Topic modeling by Sentiment Disgust: twos topics all apear to be related to looking for houses and decorating houses. We surprisingly find there are positive words such as “looking good” and “looking new”. These two topics may reveal that people may have negative feelings in how to make the house look better and how to make the houses look better.</li>
+</ul>
+
 
 
 {% endblock %}
