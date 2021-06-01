@@ -9,7 +9,7 @@ In the terminal,
 2. Activate the customized PIC16B environment:
 `conda activate PIC16B`
 
-3. Enable the Flask debug mode by setting the environment to development.*Remark: on Windows, you might use `set FLASK_ENV = development` in cmd.*:
+3. Enable the Flask debug mode by setting the environment to development *(Remark: on Windows, you might use `set FLASK_ENV = development` in cmd)*:
 `export FLASK_ENV=development`
 
 4. Start the development server:
