@@ -7,7 +7,7 @@
 {% block content %}
   <p>Welcome to our Housing Project Website!</p>
 
-  <p>Housing sales have been a hit after covid. According to CNBC,1 Sales in April 2021 were 33.9% higher than in April 2020. The supply of homes for sale at the end of April was down 20%. There were 1.16 million homes for sale, representing a 2.4-month supply at the current sales pace.
+  <p>Housing sales have been a hit after covid. According to CNBC, sales in April 2021 were 33.9% higher than in April 2020. The supply of homes for sale at the end of April was down 20%. There were 1.16 million homes for sale, representing a 2.4-month supply at the current sales pace.
       High demand and rock-bottom supply will continue to push prices higher.
       The median price of an existing home sold in April was $341,600, an increase of 19.1% from April 2020. That is both the highest median price on record and the largest annual increase on record.
       Much of that large increase in the median price is due to the mix of homes that are selling. There is far more activity on the higher end of the market, where supply is more plentiful, and very
@@ -50,4 +50,40 @@
   {%include "Cali_HighSchool_Ranking.html" %}
 
   <p>The first analysis part: Racial Inequality in Housing</p>
+    <ul>
+      <li>Races Compositions in Poverty and Total Population in California</li>
+  </ul>
+  <p>The first picture comes from data of California Races Composition in Poverty in 2018. </p>
+  {%include "Poverty2018.html" %}
+  <p>This picture comes from the population composition of California in 2018. </p>
+  {%include "PopulationRaces.html" %}
+  <p>Comparing these two graphs, we are able to see that compared to the composition in total population, white people and Asian people have a relatively low poverty composition whereas Hispanic or Latino(of any race) and people of Black have a relatively bigger composition in poverty.</p>
+
+  <ul>
+      <li>Races Income Distribution in California</li>
+  </ul>
+  {%include "IncomeRacesMean.html" %}
+  <p>This graph shows the annual household income mean distribution of different races in California from 2013 to 2018.
+      We can see that Races of White, White Non-Hispanic, Asian, Pacific Islanders have significantly higher annual incomes than other races in California.
+      This income distribution corresponds to the trend identified earlier that these races of higher annual mean incomes have lower poverty compositions. </p>
+
+  <ul>
+      <li>Housing Prices Changes in Race-Popular Regions in California</li>
+  </ul>
+  {%include "HouseAsian.html" %}{%include "HouseBlack.html" %}{%include "HouseLatino.html" %}{%include "HouseNative.html" %}{%include "HouseWhite.html" %}
+
+    <p> Comparing housing prices in places where each race has the highest composition, we can see that housing prices all go up in an upper ward trend. Nevertheless, housing prices differ across races. The highest housing price of Native American popular areas is around 700k, of Hispanic/Latino is 250k, of Black/African American is 1.5M, of White is 800k, of Asian is 2.5M. Still, in this setting, Hispanic/Latino displays a lower purchasing power.</p>
+
+ <p>The second analysis part: Sentiments and Topic Modeling</p>
+   <ul>
+      <li>Frequent Words in Reddit “House” Discussion</li>
+   </ul>
+ <p> We web scraped the house discussion from Reddit from 2013 to 2021/2/1 and did a vast series of data cleaning and preparation on the text data. Then by the 1-word frequency word cloud picture according to word frequency appeared in discussions, we surprisingly find that words related to music appear such as “song”, “mix”, “track”. By the 2-word word cloud, besides music, we find words such as “french house”, “tech house”, “new house”.</p>
+  <ul>
+      <li>Sentiments in “House” and sub “House” Discussions</li>
+  </ul>
+ <p>We then looked at the distribution of different emotions in house discussions:</p>
+ <p> </p>
+
+
 {% endblock %}
