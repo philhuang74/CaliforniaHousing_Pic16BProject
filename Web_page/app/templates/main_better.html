@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-  <p>Welcome to our Housing Project Website!</p>
+    <p><b>Welcome to our Housing Project Website!</b></p>
 
   <p>Housing sales have been a hit after covid. According to CNBC, sales in April 2021 were 33.9% higher than in April 2020. The supply of homes for sale at the end of April was down 20%. There were 1.16 million homes for sale, representing a 2.4-month supply at the current sales pace.
       High demand and rock-bottom supply will continue to push prices higher.
@@ -15,7 +15,7 @@
 
   <p> As an example, sales of homes priced between $100,000 and $250,000 were unchanged from a year earlier. Sales of homes priced between $750,000 and $1 million rose 146% from a year earlier, and sales of homes over $1 million jumped 212%. </p>
 
-  <p> Our Project: The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. We also looked at the discussion of the overall US housing market. We tried to find what are the topics that people may discuss, and what are people’s common sentiments.
+    <p> <b>Our Project:</b> The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. We also looked at the discussion of the overall US housing market. We tried to find what are the topics that people may discuss, and what are people’s common sentiments.
       Besides all the analysis part, we incorporated data in crime rates, city population, public high schools, housing locations, people’s budgets,
         longitude and latitude to shuffle our the ideal locations for people who wish to invest in houses.
       We have also added housing prices data from Zillow to predict future housing prices so that users could have a sense on how the house's future price would behave for investment purpose.  </p>
@@ -49,9 +49,9 @@
   <p> This plot is the demonstration of California High School Ranking Overview</p>
   {%include "Cali_HighSchool_Ranking.html" %}
 
-  <p>The first analysis part: Racial Inequality in Housing</p>
+  <p><b>The first analysis part: Racial Inequality in Housing</b></p>
     <ul>
-      <li>Races Compositions in Poverty and Total Population in California</li>
+        <li><b>Races Compositions in Poverty and Total Population in California</b></li>
   </ul>
   <p>The first picture comes from data of California Races Composition in Poverty in 2018. </p>
   {%include "Poverty2018.html" %}
@@ -60,7 +60,7 @@
   <p>Comparing these two graphs, we are able to see that compared to the composition in total population, white people and Asian people have a relatively low poverty composition whereas Hispanic or Latino(of any race) and people of Black have a relatively bigger composition in poverty.</p>
 
   <ul>
-      <li>Races Income Distribution in California</li>
+      <li><b>Races Income Distribution in California</b></li>
   </ul>
   {%include "IncomeRacesMean.html" %}
   <p>This graph shows the annual household income mean distribution of different races in California from 2013 to 2018.
@@ -74,16 +74,16 @@
 
     <p> Comparing housing prices in places where each race has the highest composition, we can see that housing prices all go up in an upper ward trend. Nevertheless, housing prices differ across races. The highest housing price of Native American popular areas is around 700k, of Hispanic/Latino is 250k, of Black/African American is 1.5M, of White is 800k, of Asian is 2.5M. Still, in this setting, Hispanic/Latino displays a lower purchasing power.</p>
 
- <p>The second analysis part: Sentiments and Topic Modeling</p>
+    <p><b>The second analysis part: Sentiments and Topic Modeling</b></p>
    <ul>
-      <li>Frequent Words in Reddit “House” Discussion</li>
+       <li><b>Frequent Words in Reddit “House” Discussion</b></li>
    </ul>
  <p> We web scraped the house discussion from Reddit from 2013 to 2021/2/1 and did a vast series of data cleaning and preparation on the text data. Then by the 1-word frequency word cloud picture according to word frequency appeared in discussions, we surprisingly find that words related to music appear such as “song”, “mix”, “track”. By the 2-word word cloud, besides music, we find words such as “french house”, “tech house”, “new house”.</p>
 <img src="{{url_for('static', filename='freqhouse.png')}}" align="middle" />
 <img src="{{url_for('static', filename='2gram.png')}}" align="middle" />
 
    <ul>
-      <li>Sentiments in “House” and sub “House” Discussions</li>
+       <li><b>Sentiments in “House” and sub “House” Discussions</b></li>
   </ul>
  <p>We then looked at the distribution of different emotions in house discussions:</p>
  <p>We can see that Joy and Trust are the most frequent emotions, whereas disgust and surprise are the least frequent emotions.</p>
@@ -98,7 +98,7 @@
    <img src="{{url_for('static', filename='sell.png')}}" align="middle" /><img src="{{url_for('static', filename='sell1.png')}}" align="middle" />
    <img src="{{url_for('static', filename='buy.png')}}" align="middle" /><img src="{{url_for('static', filename='buy1.png')}}" align="middle" />
 
-  <p>Topic Modeling in “House” Discussions </p>
+  <p><b>Topic Modeling in “House” Discussions</b></p>
   <p>We first do topic modeling in the overall house discussions. We may summarize the first topic as “life in house”, the second topic as “music”, the third topic as “mood”.</p>
  <img src="{{url_for('static', filename='frame1.png')}}" align="middle" />
 <p>Then, when doing topic modeling under each sentiment we get from the overall house discussions, we have interesting topic modeling results in the following two sentiments: </p>
