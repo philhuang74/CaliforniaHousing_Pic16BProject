@@ -37,8 +37,7 @@ def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,Min_ans,Max_ans):
     #only return the necessary info for users
     data1 = data1[['County','Zip','City_x','Population_density','Crime_rate_Per1000',
                   'Latitude','Longitude','X2021.03.31']]
-
     return data1
 
 
-query_function(int("3"),int("2"),int("4"),int("2"),int("100"),int("100000000"))
+# query_function(int("3"),int("2"),int("4"),int("2"),int("100"),int("100000000"))
