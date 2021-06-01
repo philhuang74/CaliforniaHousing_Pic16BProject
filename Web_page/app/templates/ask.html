@@ -5,9 +5,43 @@
 {% endblock %}
 
 {% block content %}
+<style>
+  .error{
+    color:red
+  }
+  input.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#frm').validate({
+	rules: {
+  	Q1: {
+    	required: true
+    },
+    Q2: {
+    	required: true
+    },
+    Q3: {
+      required: true
+    },
+    Q4: {
+      required: true
+    },
+    maxb: {
+      min: function() {return parseFloat($('#minb').val());}
+    }
+  }
+});
+});
+</script>
 
-
-<form method="post">
+<form id="frm" action="" method="post">
  <label for="pic16b">How do you wish about the population density in your ideal housing location?
 (scale:0&1-5, 1 means you wish to have the house in the most populated city,0 means you don't care)</label>
 <br>
@@ -21,9 +55,11 @@
 <label for="4">4</label>
 <input type="radio" name="Q1" id="5" value="5">
 <label for="5">5</label>
+<label id="Q1-error" class="error" for="Q1"></label>
+
 
         <br>
-
+    
       <br>
 
       <label for="pic16b">How do you wish about the crime rate in your ideal housing location?
@@ -39,6 +75,7 @@
 <label for="4">4</label>
 <input type="radio" name="Q2" id="5" value="5">
 <label for="5">5</label>
+<label id="Q2-error" class="error" for="Q2"></label>
 
         <br>
         <br>
@@ -57,6 +94,7 @@
       <label for="4">4</label>
       <input type="radio" name="Q3" id="5" value="5">
       <label for="5">5</label>
+      <label id="Q3-error" class="error" for="Q3"></label>
 
 
 
@@ -70,9 +108,11 @@
       <label for="1">1</label>
       <input type="radio" name="Q4" id="2" value="2">
       <label for="2">2</label>
+      
 
 
       <br>
+      <label id="Q4-error" class="error" for="Q4"></label>
       <br>
 
 
@@ -81,22 +121,19 @@
         <br>
 
 <label for="name">What is your minimum budget for your ideal housing?</label>
-    <input name="minb" id="minb">
+    <input name="minb" id="minb" required>
     <br>
     <br>
 
 <label for="name">What is your maximum budget for your ideal housing?</label>
-      <input name="maxb" id="maxb">
-
+      <input name="maxb" id="maxb" required>
 
  <br>
       <input type="submit" value="Submit form">
      </form>
  <br>
 <br>
-
  <br>
-
   <!DOCTYPE html>
   <html lang="en">
   <head>
