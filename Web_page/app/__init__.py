@@ -8,6 +8,7 @@ import pandas as pd
 from .housewares import housewares_bp, close_hw_db
 from .auth import auth_bp, close_auth_db, init_auth_db_command
 from .queryfunction import query_function
+from .create_figures import create_figures
 
 # Create web app, run with flask run
 # (set "FLASK_ENV" variable to "development" first!!!)
@@ -46,7 +47,8 @@ def ask():
             Max_ans = request.form['maxb']
             desired_alldates = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
             desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans),True)
-            return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values)
+            figs = create_figures(desired_alldates)
+            return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values, results=figs)
         except:
             return render_template('ask.html')
 
