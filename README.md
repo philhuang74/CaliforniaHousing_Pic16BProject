@@ -1,6 +1,6 @@
 # Pic16BProject
 
-To run our local website, follow these instructions:
+**To run our local website, follow these instructions**:
 In the terminal,
 
 1. Make 'Web_page' the current directory in cmd:
@@ -8,6 +8,7 @@ In the terminal,
 
 2. Activate the customized PIC16B environment:
 `conda activate PIC16B`
+*（Remark: in some cases on Windows, try to directly use `activate PIC16B/Or any other environment in your anaconda` instead of using `conda activate PIC16B`. You can list all discoverable environments with `conda info --envs` in cmd.）* 
 
 3. Enable the Flask debug mode by setting the environment to development *(Remark: on Windows, you might use `set FLASK_ENV = development` in cmd)*:
 `export FLASK_ENV=development`
@@ -17,13 +18,13 @@ In the terminal,
 
 5. In your web browser, go to http://localhost:5000/ or the recommended server stated in terminal.
 
-*Remark: in some cases on Windows, try to directly use `activate PIC16B/Or any other environment in your anaconda` instead of using `conda activate PIC16B`. You can list all discoverable environments with `conda info --envs` in cmd.* 
+
 
 `.DS_Store` files are unique to each computer system, therefore they have been deleted to avoid merge conflicts and to ensure this project folder is usable for everyone. `ipynb_checkpoint` directories have also been deleted for better version control.
 
 **Project Structure:**
 
-**Analysis part:** the summary of result can be found in the Housing Project Summary Report.pdf
+**Analysis part:** the summary of result can be found on  the main page of our website (a copy of that part is in Housing Project Summary Report.pdf)
 
 1. The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. The code, datasets, and plots can be found in social_inequality_Related folder.
 
@@ -37,6 +38,9 @@ In the terminal,
 
 *Remark on the progress of project:*
 we have not combined the prediction plots into the results of our function. Ideally by the end of the project, the function will return a prediction plot that contains the houses past prices and future prices for each row of the generated dataframe. 
+
+
+
 
 
 **Project Proposal:**
