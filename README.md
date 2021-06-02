@@ -8,7 +8,8 @@ In the terminal,
 `cd Pic16BProject/Web_page`
 
 2. If you haven't installed `fbprophet` into your `PIC16B/Or any other environment in your anaconda`, enter this command:  
-`conda install -n PIC16B -c conda-forge fbprophet`, the general command for any anaconda environment is as follows:  `conda install -n [NameOfVEnv] -c conda-forge fbprophet`.
+`conda install -n PIC16B -c conda-forge fbprophet`, the general command for any anaconda environment is as follows:  
+`conda install -n [NameOfVEnv] -c conda-forge fbprophet`.
 
 3. Activate the customized PIC16B environment:
 `conda activate PIC16B`
