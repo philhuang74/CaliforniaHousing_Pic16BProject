@@ -46,7 +46,7 @@ nav ul  {
     padding: 0;
     overflow: hidden;
     background-color: rgb(175, 198, 241);
-      background-image: linear-gradient(150deg,rgba(155,255,255,0) 35%,#8dc63f 35%);
+      background-image: linear-gradient(150deg,rgba(55,255,255,0) 35%,#8dc63f 35%);
 }
 
 nav ul li {

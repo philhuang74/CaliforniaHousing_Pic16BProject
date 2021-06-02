@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
+
+
 {% block header %}
   <h1>{% block title %}Main page{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
+
+   <img src="{{url_for('static', filename='CaliforniaHousingLogo.jpg')}}" align="middle" width="200" height="120"/>
     <p><b>Welcome to our Housing Project Website!</b></p>
 
   <p>Housing sales have been a hit after covid. According to CNBC, sales in April 2021 were 33.9% higher than in April 2020. The supply of homes for sale at the end of April was down 20%. There were 1.16 million homes for sale, representing a 2.4-month supply at the current sales pace.
