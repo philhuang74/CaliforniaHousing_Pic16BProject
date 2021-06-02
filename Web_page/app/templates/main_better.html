@@ -10,7 +10,7 @@
 
    <img src="{{url_for('static', filename='CaliforniaHousingLogo.jpg')}}" align="middle" width="200" height="120"/>
     <p><b>Welcome to our Housing Project Website!</b></p>
-
+    <p><b> Project Background and Motivation </b></p>
   <p>Housing sales have been a hit after covid. According to CNBC, sales in April 2021 were 33.9% higher than in April 2020. The supply of homes for sale at the end of April was down 20%. There were 1.16 million homes for sale, representing a 2.4-month supply at the current sales pace.
       High demand and rock-bottom supply will continue to push prices higher.
       The median price of an existing home sold in April was $341,600, an increase of 19.1% from April 2020. That is both the highest median price on record and the largest annual increase on record.
@@ -19,13 +19,15 @@
 
   <p> As an example, sales of homes priced between $100,000 and $250,000 were unchanged from a year earlier. Sales of homes priced between $750,000 and $1 million rose 146% from a year earlier, and sales of homes over $1 million jumped 212%. </p>
 
-    <p> <b>Our Project:</b> The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races. We also looked at the discussion of the overall US housing market. We tried to find what are the topics that people may discuss, and what are people’s common sentiments.
-      Besides all the analysis part, we incorporated data in crime rates, city population, public high schools, housing locations, people’s budgets,
+    <p> <b>Our Project:</b>
+        1. The differences between the demand in high-end homes and low-end ones prompt us to consider the social inequality in purchasing houses, especially in races.
+        2. We also looked at the discussion of the overall US housing market. We tried to find what are the topics that people may discuss, and what are people’s common sentiments.
+        3. Besides all the analysis part, we incorporated data in crime rates, city population, public high schools, housing locations, people’s budgets,
         longitude and latitude to shuffle our the ideal locations for people who wish to invest in houses.
-      We have also added housing prices data from Zillow to predict future housing prices so that users could have a sense on how the house's future price would behave for investment purpose.  </p>
+        4. We have also added housing prices data from Zillow to predict future housing prices so that users could have a sense on how the house's future price would behave for investment purpose.  </p>
 
 
-  <p>The first plot is the overall overview of how the house prices would change in California</p>
+    <p><i>The first plot is the overall overview of how the house prices would change in California</i></p>
 
   <!-- <p>This website will teach us how to make a website using Python.  To do so, we need to use something called a web framework.  We have multiple options for this.  Two of the most popular options are Flask and Django.  We will be using Flask because it is simpler and easier to learn.  If you are doing a big project, you might find Django easier to manage.  Either way, the skills from one web framework are transferable to others, even though they may do things differently.</p>
 
@@ -50,8 +52,6 @@
 
   <p>If you want to make an actual public website and want to learn more, feel free to reach out to me.  I can give more details and point you to good resources available online.</p> -->
   {%include "Cali_Housing_Trend.html" %}
-  <p> This plot is the demonstration of California High School Ranking Overview</p>
-  {%include "Cali_HighSchool_Ranking.html" %}
 
   <p><b>The first analysis part: Racial Inequality in Housing</b></p>
     <ul>
@@ -72,7 +72,7 @@
       This income distribution corresponds to the trend identified earlier that these races of higher annual mean incomes have lower poverty compositions. </p>
 
   <ul>
-      <li>Housing Prices Changes in Race-Popular Regions in California</li>
+      <li><b>Housing Prices Changes in Race-Popular Regions in California</b></li>
   </ul>
   {%include "HouseAsian.html" %}{%include "HouseBlack.html" %}{%include "HouseLatino.html" %}{%include "HouseNative.html" %}{%include "HouseWhite.html" %}
 
@@ -102,18 +102,41 @@
    <img src="{{url_for('static', filename='sell.png')}}" align="middle" /><img src="{{url_for('static', filename='sell1.png')}}" align="middle" />
    <img src="{{url_for('static', filename='buy.png')}}" align="middle" /><img src="{{url_for('static', filename='buy1.png')}}" align="middle" />
 
-  <p><b>Topic Modeling in “House” Discussions</b></p>
+  <ul>
+       <li><b>Topic Modeling in “House” Discussions</b></li>
+  </ul>
+
   <p>We first do topic modeling in the overall house discussions. We may summarize the first topic as “life in house”, the second topic as “music”, the third topic as “mood”.</p>
  <img src="{{url_for('static', filename='frame1.png')}}" align="middle" />
 <p>Then, when doing topic modeling under each sentiment we get from the overall house discussions, we have interesting topic modeling results in the following two sentiments: </p>
 <ul>
-      <li>Topic modeling by Sentiment Fear: the first topic may be related to houses equipments whereas the second topic is related to different types of houses. These two topics reveal that people may have negative feelings in either looking for houses decorations or experiencing different types of houses. The third topic is related to house tech and music.</li>
+    <li><b>Topic modeling by Sentiment Fear:</b> the first topic may be related to houses equipments whereas the second topic is related to different types of houses. These two topics reveal that people may have negative feelings in either looking for houses decorations or experiencing different types of houses. The third topic is related to house tech and music.</li>
 </ul>
  <img src="{{url_for('static', filename='framefear.png')}}" align="middle" />
 <ul>
-      <li>Topic modeling by Sentiment Disgust: twos topics all apear to be related to looking for houses and decorating houses. We surprisingly find there are positive words such as “looking good” and “looking new”. These two topics may reveal that people may have negative feelings in how to make the house look better and how to make the houses look better.</li>
+    <li><b>Topic modeling by Sentiment Disgust:</b> twos topics all apear to be related to looking for houses and decorating houses. We surprisingly find there are positive words such as “looking good” and “looking new”. These two topics may reveal that people may have negative feelings in how to make the house look better and how to make the houses look better.</li>
 </ul>
  <img src="{{url_for('static', filename='framedisgust.png')}}" align="middle" />
 
-
+    <p><b>The last part: other plots that we have constructed for better understanding of California Housing Related Stuff</b></p>
+  <ul>
+    <li><i>This plot is the demonstration of California High School Ranking Overview</i></li>
+  </ul>
+  {%include "Cali_HighSchool_Ranking.html" %}
+   <ul>
+    <li><i>This plot is the demonstration of Annual Household Income Mean by Counties in California</i></li>
+  </ul>
+    <img src="{{url_for('static', filename='incomelocations.png')}}" align="middle" />
+     <ul>
+    <li><i>This plot is the Races Composition by Counties in California</i></li>
+  </ul>
+    <img src="{{url_for('static', filename='racebycounty.png')}}" align="middle" />
+     <ul>
+    <li><i>This plot is the Races Composition by Cities in California</i></li>
+  </ul>
+    <img src="{{url_for('static', filename='Racebycity.png')}}" align="middle" />
+    <ul>
+    <li><i>This plot is the changes of California Interest Rate</i></li>
+  </ul>
+    <img src="{{url_for('static', filename='CaliInterestRate.png')}}" align="middle" />
 {% endblock %}
