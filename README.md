@@ -1,22 +1,30 @@
 # Pic16BProject
 
-**To run our local website, follow these instructions**:
-In the terminal,
+**To run our local website, follow these instructions**:  
 
+In the terminal,  
+  
 1. Make 'Web_page' the current directory in cmd:
 `cd Pic16BProject/Web_page`
 
-2. Activate the customized PIC16B environment:
+2. If you haven't installed `fbprophet` into your `PIC16B/Or any other environment in your anaconda`, enter this command:  
+`conda install -n PIC16B -c conda-forge fbprophet` 
+
+The general command for any anaconda environment is as follows:  
+
+`conda install -n [NameOfVEnv] -c conda-forge fbprophet`
+
+3. Activate the customized PIC16B environment:
 `conda activate PIC16B`
 *（Remark: in some cases on Windows, try to directly use `activate PIC16B/Or any other environment in your anaconda` instead of using `conda activate PIC16B`. You can list all discoverable environments with `conda info --envs` in cmd.）*
 
-3. Enable the Flask debug mode by setting the environment to development *(Remark: on Windows, you might use `set FLASK_ENV = development` in cmd)*:
+4. Enable the Flask debug mode by setting the environment to development *(Remark: on Windows, you might use `set FLASK_ENV = development` in cmd)*:
 `export FLASK_ENV=development`
 
-4. Start the development server:
+5. Start the development server:
 `flask run`
 
-5. In your web browser, go to http://localhost:5000/ or the recommended server stated in terminal.
+6. In your web browser, go to http://localhost:5000/ or the recommended server stated in terminal.
 
 
 
