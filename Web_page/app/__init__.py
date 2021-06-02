@@ -44,7 +44,8 @@ def ask():
             Q4_ans = request.form['Q4']
             Min_ans = request.form['minb']
             Max_ans = request.form['maxb']
-            desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
+            desired_alldates = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
+            desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans),True)
             return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values)
         except:
             return render_template('ask.html')
