@@ -38,7 +38,17 @@ The summary of result can be found on the main page of our website (a copy of th
 
 The data we used from the following resources,
 > https://www.zillow.com/research/data/
+
 > https://www.schooldigger.com/go/CA/schoolrank.aspx?level=3#
+
+> https://en.wikipedia.org/wiki/California_locations_by_race
+
+> https://www.ftb.ca.gov/pay/penalties-and-interest/interest-and-estimate-penalty-rates.html 
+
+> https://en.wikipedia.org/wiki/List_of_California_locations_by_income
+
+> https://en.wikipedia.org/wiki/California_locations_by_crime_rate
+
 
 1. We incorporated data in crime rates, city population, public high schools, housing locations, people’s budgets, longitude and latitude, and future housing price predictions to shuffle our the ideal locations for people who wish to invest in houses. We created a web page where the user can input their preference to get area suggestions that fit those criteria in the form of a data frame.
 
