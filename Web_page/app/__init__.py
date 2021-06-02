@@ -1,13 +1,13 @@
-from flask import Flask, g, render_template, request
+from app.create_figures import create_figures
+from flask import Flask, render_template, request
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
-
 
 from .housewares import housewares_bp, close_hw_db
 from .auth import auth_bp, close_auth_db, init_auth_db_command
 from .queryfunction import query_function
+from .create_figures import create_figures
 
 # Create web app, run with flask run
 # (set "FLASK_ENV" variable to "development" first!!!)
@@ -31,7 +31,6 @@ def hello_name(name):
     return render_template('hello.html', name=name)
 
 # Page with form
-
 @app.route('/ask/', methods=['POST', 'GET'])
 def ask():
     if request.method == 'GET':
@@ -44,8 +43,10 @@ def ask():
             Q4_ans = request.form['Q4']
             Min_ans = request.form['minb']
             Max_ans = request.form['maxb']
+            desired_all_dates = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
             desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans),True)
-            return render_template('ask.html',tables=[desired.to_html(classes='data', header="true")])
+            figs = create_figures(desired_all_dates)
+            return render_template('ask.html', tables=[desired.to_html(classes='data', header="true")], results=figs)
         except:
             return render_template('ask.html')
 
