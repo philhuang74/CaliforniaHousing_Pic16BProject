@@ -38,12 +38,15 @@ def ask():
         return render_template('ask.html')
     else:
         try:
+            # upon POST request, get the answers to the questionaire form
             Q1_ans = request.form['Q1']
             Q2_ans = request.form['Q2']
             Q3_ans = request.form['Q3']
             Q4_ans = request.form['Q4']
             Min_ans = request.form['minb']
             Max_ans = request.form['maxb']
+
+            # extract the desired pandas dataframe based on the answers to the questionaire form
             desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
             
             # get the html format of the desired dataset
