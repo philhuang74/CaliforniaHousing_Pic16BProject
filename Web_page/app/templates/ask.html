@@ -161,7 +161,7 @@ $(document).ready(function() {
               {{ table|safe }}
   {% endfor %}
   {% if results %}
-    <p>The following figures are the predicted housing price trends.</p>
+    <p>The following figures predict housing price trends.</p>
   {% endif %}
   {% for fig in results %}
       <img src="data:image/png;base64,{{ fig }}" width="850" vspace="10">
