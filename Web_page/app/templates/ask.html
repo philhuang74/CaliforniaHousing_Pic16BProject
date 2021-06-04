@@ -164,7 +164,7 @@ $(document).ready(function() {
     <p>The following figures are the predicted housing price trends.</p>
   {% endif %}
   {% for fig in results %}
-      <img src="{{ fig }}" width="850" vspace="10">
+      <img src="data:image/png;base64,{{ fig }}" width="850" vspace="10">
   {% endfor %}
   </body>
   </html>

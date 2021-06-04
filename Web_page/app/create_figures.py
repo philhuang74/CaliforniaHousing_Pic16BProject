@@ -1,33 +1,29 @@
-import os, shutil, matplotlib
-import pandas as pd
-from fbprophet import Prophet
-from os import listdir
-from os.path import isfile, join
+import sqlite3, base64
+from os.path import join, dirname, realpath
 
 def create_figures(df):
-    matplotlib.use('Agg')
-    # save the figures in a folder names "figures"
-    save_folder = os.path.join(os.path.dirname(__file__),"static/figures")
-    if os.path.exists(save_folder):
-            shutil.rmtree(save_folder)
-    if not os.path.exists(save_folder):
-        os.mkdir(save_folder)
+    figure_binaries = []
+    conn1 = sqlite3.connect(join(dirname(realpath(__file__)),"figures/figures1.db"))
+    conn2 = sqlite3.connect(join(dirname(realpath(__file__)),"figures/figures2.db"))
+    cursor1 = conn1.cursor()
+    cursor2 = conn2.cursor()
     filter_col = [col for col in df if col.startswith('X')]
     dfT=df[filter_col]
-    for i in list(dfT.T.keys()):
-        dfT.T[i].to_frame()
-        inp = dfT.T[i].to_frame(name="y")
-        inp["ds"]=inp.index
-        inp=inp[["ds","y"]]
-        inp["ds"] = inp["ds"].str.extract(r'(\d+.\d+.\d+)')
-        inp["ds"]=pd.to_datetime(inp["ds"], infer_datetime_format=True)
-        m = Prophet(weekly_seasonality=True, growth='linear',yearly_seasonality=0.0000001)
-        m.add_seasonality(name='daily', period=1, fourier_order=2)
-        m.fit(inp)
-        future = m.make_future_dataframe(periods=365)
-        forecast = m.predict(future)
-        fig = m.plot(forecast)
-        fig.gca().set_ylabel("Housing Price (in USD) for Zip Code: " + str(df["Zip"][i]))
-        fig.gca().set_xlabel("Time (in year)")
-        fig.savefig(os.path.join(save_folder,"figure"+str(i)+".png"),bbox_inches='tight')
-    return [join("../static/figures",f) for f in listdir(save_folder) if isfile(join(save_folder, f))]
+    keys = list(dfT.T.keys())
+    zip_codes = tuple([int(df["Zip"][k]) for k in keys])
+    sql_query = """SELECT * FROM figure_table WHERE zip_code IN {0}""".format(zip_codes)
+    data1 = cursor1.execute(sql_query)
+    data2 = cursor2.execute(sql_query)
+    column_names = [description[0] for description in data1.description]
+    figure_index = column_names.index("figure")
+    for x in data1.fetchall():
+        figure_binaries.append(base64.b64encode(x[figure_index]).decode("utf-8"))
+    for x in data2.fetchall():
+        figure_binaries.append(base64.b64encode(x[figure_index]).decode("utf-8"))
+    conn1.commit()
+    cursor1.close()
+    conn1.close()
+    conn2.commit()
+    cursor2.close()
+    conn2.close()
+    return figure_binaries

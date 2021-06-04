@@ -1,8 +1,7 @@
-from flask import Flask, g, render_template, request
+from flask import Flask, render_template, request
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 
 from .housewares import housewares_bp, close_hw_db
@@ -45,10 +44,9 @@ def ask():
             Q4_ans = request.form['Q4']
             Min_ans = request.form['minb']
             Max_ans = request.form['maxb']
-            desired_alldates = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
-            desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans),True)
-            figs = create_figures(desired_alldates)
-            return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values, results=figs)
+            desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
+            fig_binaries = create_figures(desired)
+            return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values, results=fig_binaries)
         except:
             return render_template('ask.html')
 

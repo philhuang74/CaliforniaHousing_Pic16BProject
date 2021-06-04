@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,Min_ans,Max_ans,selected=False):
+def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,Min_ans,Max_ans):
     #read in dataset
     data = pd.read_csv(os.path.join(os.path.dirname(__file__),'Final_data_set.csv'))
     data1 = data
@@ -35,10 +35,8 @@ def query_function(Q1_ans,Q2_ans,Q3_ans,Q4_ans,Min_ans,Max_ans,selected=False):
     data1 = data1[data1['X2021.03.31'] >= Min_ans]
 
     #only return the necessary info for users
-    if selected:
-        data1 = data1[['County','Zip','City_x','Population_density','Crime_rate_Per1000',
+    data1 = data1[['County','Zip','City_x','Population_density','Crime_rate_Per1000',
                   'Latitude','Longitude','X2021.03.31']]
-        return data1
     return data1
 
 
