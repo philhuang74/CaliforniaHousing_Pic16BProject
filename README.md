@@ -5,7 +5,7 @@
 In the terminal,  
   
 1. Make 'Web_page' the current directory in cmd:
-`cd Pic16BProject/Web_page`  
+`cd Web_page`  
   
 2. Activate the customized PIC16B environment:
 `conda activate PIC16B`
