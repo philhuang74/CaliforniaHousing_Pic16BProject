@@ -24,7 +24,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script>
 $(document).ready(function() {
-  $('#frm').validate({
+  $('#form').validate({
 	rules: {
   	Q1: {
     	required: true
@@ -63,7 +63,7 @@ $(document).ready(function() {
 {% block content %}
 
 <!-- the housing preferences questionaire form -->
-<form id="frm" action="" method="post">
+<form id="form" action="" method="post">
   <label for="pic16b">
     On the scale of 1 to 5, how much do you care about the population density in your ideal housing location?<br>
       (5 means you wish to have the house in the least populated city, 0 means you don't care about this question)
@@ -145,20 +145,21 @@ $(document).ready(function() {
   <br>
   <input type="submit" value="Submit Answers">
 </form>
-<br>
-<br>
-<br>
 
 <!-- Outputted dataset and plots after a POST REQUEST is sent from submitting the form -->
 <!DOCTYPE html>
 <html lang="en">
   <body>
-    {{ table|safe }}
     {% if table %}
+      <br>
+      <br>
+      <br>
+      {{ table|safe }}
       <script>
         var table = document.getElementById("housing-data").tBodies[0];
         for (var i = 0, row; row = table.rows[i]; i++) {
           var link = document.createElement('a');
+          link.style.color = "blue";
           link.href = "#" + row.cells[2].innerHTML;
           link.innerHTML = row.cells[2].innerHTML;
           row.cells[2].innerHTML = "";
@@ -172,7 +173,10 @@ $(document).ready(function() {
         Click on the links in the <b>Zip</b> column to see the figure corresponding to each zip code.</p>
       {% for zip, fig in zip_figures %}
         <img id = "{{ zip }}" src="data:image/png;base64,{{ fig }}" width="850" vspace="10">
+        <a href="#housing-data" style="float:right;color:blue">Back to the Table</a>
       {% endfor %}
+      <br>
+      <br>
     {% endif %}
   </body>
 </html>
