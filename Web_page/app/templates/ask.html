@@ -1,3 +1,13 @@
+<!-- 
+  FILE NAME: ask.html
+  DESCRIPTION: A page consisting of a questionaire form that asks
+  the user's housing preferences and outputs
+        1. a dataset of locations
+        2. the plots of the housing price trend for each location
+  according to those preferences.
+-->
+
+<!-- style settings for error messages -->
 <style>
   .error{
     color:red
@@ -8,6 +18,8 @@
     color: red;
   }
 </style>
+
+<!-- rules for the questionaire form (Note: requires JQuery) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script>
@@ -50,6 +62,7 @@ $(document).ready(function() {
 
 {% block content %}
 
+<!-- the housing preferences questionaire form -->
 <form id="frm" action="" method="post">
   <label for="pic16b">
     On the scale of 1 to 5, how much do you care about the population density in your ideal housing location?<br>
@@ -135,6 +148,8 @@ $(document).ready(function() {
 <br>
 <br>
 <br>
+
+<!-- Outputted dataset and plots after a POST REQUEST is sent from submitting the form -->
 <!DOCTYPE html>
 <html lang="en">
   <body>
