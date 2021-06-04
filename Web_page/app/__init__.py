@@ -45,8 +45,14 @@ def ask():
             Min_ans = request.form['minb']
             Max_ans = request.form['maxb']
             desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
-            fig_binaries = create_figures(desired)
-            return render_template('ask.html',tables=[desired.to_html(classes='data')], results=fig_binaries)
+            
+            # get the html format of the desired dataset
+            desired_html_table = desired.to_html(classes='data', table_id="housing-data",justify="center")
+            
+            # extract the list of (zip code, figure) tuples corresponding to the desired data
+            zip_figures = create_figures(desired)
+            
+            return render_template('ask.html',table=desired_html_table, zip_figures=zip_figures)
         except:
             return render_template('ask.html')
 

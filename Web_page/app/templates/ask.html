@@ -153,15 +153,27 @@ $(document).ready(function() {
 <!DOCTYPE html>
 <html lang="en">
   <body>
-    {% for table in tables %}
-      {{ table|safe }}
-    {% endfor %}
-    {% if results %}
-      <p>The following figures predict housing price trends.</p>
+    {{ table|safe }}
+    {% if table %}
+      <script>
+        var table = document.getElementById("housing-data").tBodies[0];
+        for (var i = 0, row; row = table.rows[i]; i++) {
+          var link = document.createElement('a');
+          link.href = "#" + row.cells[2].innerHTML;
+          link.innerHTML = row.cells[2].innerHTML;
+          row.cells[2].innerHTML = "";
+          row.cells[2].appendChild(link);
+        }
+      </script>
     {% endif %}
-    {% for fig in results %}
-      <img src="data:image/png;base64,{{ fig }}" width="850" vspace="10">
-    {% endfor %}
+    {% if zip_figures %}
+      <p>The following figures predict housing price trends.
+        <br>
+        Click on the links in the <b>Zip</b> column to see the figure corresponding to each zip code.</p>
+      {% for zip, fig in zip_figures %}
+        <img id = "{{ zip }}" src="data:image/png;base64,{{ fig }}" width="850" vspace="10">
+      {% endfor %}
+    {% endif %}
   </body>
 </html>
 {% endblock %}
