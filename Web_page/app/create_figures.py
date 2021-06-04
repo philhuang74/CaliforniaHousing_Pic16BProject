@@ -1,8 +1,5 @@
 # ******************************************************************************
 #  * FILE NAME: create_figures.py
-#  * INPUT: a pandas dataframe based on Final_data_set.csv (the housing dataset)
-#  * OUTPUT: a list of tuples in the following format:
-#  *            (zip code, .png image data in bytes)
 #  * DESCRIPTION: This python script includes a create_figures function that
 #  *              uses the "Zip" (Code) column of the housing dataframe to
 #  *              extract and return the corresponding zip codes and figures
@@ -13,6 +10,10 @@ import sqlite3, base64
 from os.path import join, dirname, realpath
 
 def create_figures(df):
+    """
+    :param df: a pandas dataframe based on Final_data_set.csv (the housing dataset)
+    :return: a list of tuples in the following format: (zip code, .png image data in bytes)
+    """
     # create an empty list that will contain (zip code, .png image data in bytes) tuples
     zip_figures = []
 
