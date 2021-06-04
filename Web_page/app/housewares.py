@@ -1,4 +1,4 @@
-from flask import Blueprint, g, render_template, url_for, abort
+from flask import Blueprint, g, render_template, abort
 import sqlite3
 
 def get_hw_db():
