@@ -46,7 +46,7 @@ def ask():
             Max_ans = request.form['maxb']
             desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
             fig_binaries = create_figures(desired)
-            return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values, results=fig_binaries)
+            return render_template('ask.html',tables=[desired.to_html(classes='data')], results=fig_binaries)
         except:
             return render_template('ask.html')
 
