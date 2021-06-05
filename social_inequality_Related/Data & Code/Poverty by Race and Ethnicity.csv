@@ -1,0 +1,49 @@
+ID Race,Race,ID Year,Year,ID Poverty Status,Poverty Status,Poverty Population,Poverty Population Moe,Geography,ID Geography,Slug Geography,share
+1,White,2015,2015,0,Income In The Past 12 Months Below Poverty Level,3428428,14342.41946,California,04000US06,california,0.363596873
+1,White,2014,2014,0,Income In The Past 12 Months Below Poverty Level,3408637,14261.93216,California,04000US06,california,0.362012084
+1,White,2016,2016,0,Income In The Past 12 Months Below Poverty Level,3326584,14530.0446,California,04000US06,california,0.361077472
+9,Hispanic,2014,2014,0,Income In The Past 12 Months Below Poverty Level,3300566,13090.29083,California,04000US06,california,0.350534473
+9,Hispanic,2015,2015,0,Income In The Past 12 Months Below Poverty Level,3294059,13489.59599,California,04000US06,california,0.349346567
+1,White,2013,2013,0,Income In The Past 12 Months Below Poverty Level,3274894,14125.37132,California,04000US06,california,0.361233922
+9,Hispanic,2016,2016,0,Income In The Past 12 Months Below Poverty Level,3208680,13226.2407,California,04000US06,california,0.348279816
+1,White,2017,2017,0,Income In The Past 12 Months Below Poverty Level,3183011,13830.8349,California,04000US06,california,0.360623638
+9,Hispanic,2013,2013,0,Income In The Past 12 Months Below Poverty Level,3180437,12998.85222,California,04000US06,california,0.350814937
+9,Hispanic,2017,2017,0,Income In The Past 12 Months Below Poverty Level,3052999,12948.22795,California,04000US06,california,0.345893748
+1,White,2018,2018,0,Income In The Past 12 Months Below Poverty Level,3011909,13219.46489,California,04000US06,california,0.360259907
+9,Hispanic,2018,2018,0,Income In The Past 12 Months Below Poverty Level,2873237,13133.96113,California,04000US06,california,0.343673097
+6,Other,2014,2014,0,Income In The Past 12 Months Below Poverty Level,1211343,8577.990907,California,04000US06,california,0.128649898
+6,Other,2015,2015,0,Income In The Past 12 Months Below Poverty Level,1198852,8648.056371,California,04000US06,california,0.12714248
+6,Other,2016,2016,0,Income In The Past 12 Months Below Poverty Level,1189592,8322.418699,California,04000US06,california,0.129121908
+6,Other,2013,2013,0,Income In The Past 12 Months Below Poverty Level,1183594,8631.693924,California,04000US06,california,0.130555158
+6,Other,2017,2017,0,Income In The Past 12 Months Below Poverty Level,1141471,8290.241191,California,04000US06,california,0.129324537
+6,Other,2018,2018,0,Income In The Past 12 Months Below Poverty Level,1081319,8217.924799,California,04000US06,california,0.12933853
+4,Asian,2015,2015,0,Income In The Past 12 Months Below Poverty Level,615534,5321.949549,California,04000US06,california,0.06527955
+4,Asian,2016,2016,0,Income In The Past 12 Months Below Poverty Level,610724,5515.771116,California,04000US06,california,0.066289827
+4,Asian,2017,2017,0,Income In The Past 12 Months Below Poverty Level,607792,5554.454519,California,04000US06,california,0.068860636
+4,Asian,2014,2014,0,Income In The Past 12 Months Below Poverty Level,604261,5504.941689,California,04000US06,california,0.064175148
+4,Asian,2018,2018,0,Income In The Past 12 Months Below Poverty Level,593664,5448.408391,California,04000US06,california,0.071009229
+4,Asian,2013,2013,0,Income In The Past 12 Months Below Poverty Level,581211,5645.392635,California,04000US06,california,0.064109901
+2,Black,2015,2015,0,Income In The Past 12 Months Below Poverty Level,534827,5446.313707,California,04000US06,california,0.056720288
+2,Black,2014,2014,0,Income In The Past 12 Months Below Poverty Level,534729,5286.507637,California,04000US06,california,0.056790547
+2,Black,2016,2016,0,Income In The Past 12 Months Below Poverty Level,523888,5058.464886,California,04000US06,california,0.056864385
+2,Black,2013,2013,0,Income In The Past 12 Months Below Poverty Level,512495,5259.953232,California,04000US06,california,0.056530251
+2,Black,2017,2017,0,Income In The Past 12 Months Below Poverty Level,502610,5234.219904,California,04000US06,california,0.056943896
+2,Black,2018,2018,0,Income In The Past 12 Months Below Poverty Level,475436,5288.740493,California,04000US06,california,0.056867764
+7,Two Or More,2015,2015,0,Income In The Past 12 Months Below Poverty Level,267236,4017.332324,California,04000US06,california,0.02834132
+7,Two Or More,2016,2016,0,Income In The Past 12 Months Below Poverty Level,266174,3867.359694,California,04000US06,california,0.02889133
+7,Two Or More,2014,2014,0,Income In The Past 12 Months Below Poverty Level,264776,4043.739853,California,04000US06,california,0.028120364
+7,Two Or More,2017,2017,0,Income In The Past 12 Months Below Poverty Level,254976,3971.480329,California,04000US06,california,0.028887859
+7,Two Or More,2018,2018,0,Income In The Past 12 Months Below Poverty Level,245474,3851.82619,California,04000US06,california,0.029361591
+7,Two Or More,2013,2013,0,Income In The Past 12 Months Below Poverty Level,244100,3874.57688,California,04000US06,california,0.026925207
+3,Native American,2014,2014,0,Income In The Past 12 Months Below Poverty Level,67164,1897.147596,California,04000US06,california,0.007133109
+3,Native American,2013,2013,0,Income In The Past 12 Months Below Poverty Level,66432,1783.145255,California,04000US06,california,0.007327716
+3,Native American,2015,2015,0,Income In The Past 12 Months Below Poverty Level,65168,1842.292051,California,04000US06,california,0.006911296
+3,Native American,2016,2016,0,Income In The Past 12 Months Below Poverty Level,63818,1790.170662,California,04000US06,california,0.006926998
+3,Native American,2017,2017,0,Income In The Past 12 Months Below Poverty Level,62078,1819.768941,California,04000US06,california,0.007033213
+3,Native American,2018,2018,0,Income In The Past 12 Months Below Poverty Level,58630,1754.17559,California,04000US06,california,0.007012841
+5,Pacific Islander,2015,2015,0,Income In The Past 12 Months Below Poverty Level,25097,1162.456021,California,04000US06,california,0.002661625
+5,Pacific Islander,2014,2014,0,Income In The Past 12 Months Below Poverty Level,24334,1176.991504,California,04000US06,california,0.002584377
+5,Pacific Islander,2016,2016,0,Income In The Past 12 Months Below Poverty Level,23477,1093.24334,California,04000US06,california,0.002548264
+5,Pacific Islander,2013,2013,0,Income In The Past 12 Months Below Poverty Level,22691,1174.698259,California,04000US06,california,0.002502908
+5,Pacific Islander,2017,2017,0,Income In The Past 12 Months Below Poverty Level,21470,1109.938287,California,04000US06,california,0.002432473
+5,Pacific Islander,2018,2018,0,Income In The Past 12 Months Below Poverty Level,20709,1064.712168,California,04000US06,california,0.002477041
