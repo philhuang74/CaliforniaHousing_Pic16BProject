@@ -1,33 +1,60 @@
-import os, shutil, matplotlib
-import pandas as pd
-from fbprophet import Prophet
-from os import listdir
-from os.path import isfile, join
+# ******************************************************************************
+#  * FILE NAME: create_figures.py
+#  * DESCRIPTION: This python script includes a create_figures function that
+#  *              uses the "Zip" (Code) column of the housing dataframe to
+#  *              extract and return the corresponding zip codes and figures
+#  *              of the housing trend plots in bytes.
+#  ******************************************************************************
+
+import sqlite3, base64
+from os.path import join, dirname, realpath
 
 def create_figures(df):
-    matplotlib.use('Agg')
-    # save the figures in a folder names "figures"
-    save_folder = os.path.join(os.path.dirname(__file__),"static/figures")
-    if os.path.exists(save_folder):
-            shutil.rmtree(save_folder)
-    if not os.path.exists(save_folder):
-        os.mkdir(save_folder)
-    filter_col = [col for col in df if col.startswith('X')]
-    dfT=df[filter_col]
-    for i in list(dfT.T.keys()):
-        dfT.T[i].to_frame()
-        inp = dfT.T[i].to_frame(name="y")
-        inp["ds"]=inp.index
-        inp=inp[["ds","y"]]
-        inp["ds"] = inp["ds"].str.extract(r'(\d+.\d+.\d+)')
-        inp["ds"]=pd.to_datetime(inp["ds"], infer_datetime_format=True)
-        m = Prophet(weekly_seasonality=True, growth='linear',yearly_seasonality=0.0000001)
-        m.add_seasonality(name='daily', period=1, fourier_order=2)
-        m.fit(inp)
-        future = m.make_future_dataframe(periods=365)
-        forecast = m.predict(future)
-        fig = m.plot(forecast)
-        fig.gca().set_ylabel("Housing Price (in USD) for Zip Code: " + str(df["Zip"][i]))
-        fig.gca().set_xlabel("Time (in year)")
-        fig.savefig(os.path.join(save_folder,"figure"+str(i)+".png"),bbox_inches='tight')
-    return [join("../static/figures",f) for f in listdir(save_folder) if isfile(join(save_folder, f))]
+    """
+    :param df: a pandas dataframe based on Final_data_set.csv (the housing dataset)
+    :return: a list of tuples in the following format: (zip code, .png image data in bytes)
+    """
+    # create an empty list that will contain (zip code, .png image data in bytes) tuples
+    zip_figures = []
+
+    # connect to the figures1.db and figures2.db databases in the figures folder
+    conn1 = sqlite3.connect(join(dirname(realpath(__file__)),"figures/figures1.db"))
+    conn2 = sqlite3.connect(join(dirname(realpath(__file__)),"figures/figures2.db"))
+
+    # create cursor objects to execute SQL commands
+    cursor1 = conn1.cursor()
+    cursor2 = conn2.cursor()
+
+    # extract all the zip codes from the dataframe
+    zip_codes = tuple([int(df["Zip"][k]) for k in list(df.T.keys())])
+
+    # SQL query the figures that correspond to the zip codes
+    sql_query = """SELECT * FROM figure_table WHERE zip_code IN {0}""".format(zip_codes)
+    data1 = cursor1.execute(sql_query)
+    data2 = cursor2.execute(sql_query)
+
+    # find the index of the zip code and figure columns in the database
+    column_names = [description[0] for description in data1.description]
+    figure_index = column_names.index("figure")
+    zip_code_index = column_names.index("zip_code")
+
+    # append (zip code, .png image data in bytes) tuples to the zip_figures list
+    for x in data1.fetchall():
+        zip_figures.append((x[zip_code_index], base64.b64encode(x[figure_index]).decode("utf-8")))
+    for x in data2.fetchall():
+        zip_figures.append((x[zip_code_index], base64.b64encode(x[figure_index]).decode("utf-8")))
+    
+    # save (commit) the changes
+    conn1.commit()
+    conn2.commit()
+    
+    # close the cursor objects
+    cursor1.close()
+    cursor2.close()
+    
+    # close the connections
+    conn1.close()
+    conn2.close()
+
+    # return the list of (zip code, .png image data in bytes) tuples
+    return zip_figures

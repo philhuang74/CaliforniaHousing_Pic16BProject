@@ -1,3 +1,13 @@
+<!-- 
+  FILE NAME: ask.html
+  DESCRIPTION: A page consisting of a questionaire form that asks
+  the user's housing preferences and outputs
+        1. a dataset of locations
+        2. the plots of the housing price trend for each location
+  according to those preferences.
+-->
+
+<!-- style settings for error messages -->
 <style>
   .error{
     color:red
@@ -8,11 +18,13 @@
     color: red;
   }
 </style>
+
+<!-- rules for the questionaire form (Note: requires JQuery) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <script>
 $(document).ready(function() {
-  $('#frm').validate({
+  $('#form').validate({
 	rules: {
   	Q1: {
     	required: true
@@ -27,7 +39,8 @@ $(document).ready(function() {
       required: true
     },
     minb: {
-      number: true
+      number: true,
+      min: 0
     },
     maxb: {
       number: true,
@@ -49,120 +62,122 @@ $(document).ready(function() {
 
 {% block content %}
 
-<form id="frm" action="" method="post">
- <label for="pic16b">On the scale of 1 to 5, how much do you care about the population density in your ideal housing location?
-(5 means you wish to have the house in the least populated city, 0 means you don't care about this question)</label>
-<br>
-<input type="radio" name="Q1" id="0" value="0">
-<label for="0">0</label>
-<input type="radio" name="Q1" id="1" value="1">
-<label for="1">1</label>
-<input type="radio" name="Q1" id="2" value="2">
-<label for="2">2</label>
-<input type="radio" name="Q1" id="3" value="3">
-<label for="3">3</label>
-<input type="radio" name="Q1" id="4" value="4">
-<label for="4">4</label>
-<input type="radio" name="Q1" id="5" value="5">
-<label for="5">5</label>
-<label id="Q1-error" class="error" for="Q1"></label>
+<!-- the housing preferences questionaire form -->
+<form id="form" action="" method="post">
+  <label for="pic16b">
+    On the scale of 1 to 5, how much do you care about the population density in your ideal housing location?<br>
+      (5 means you wish to have the house in the least populated city, 0 means you don't care about this question)
+  </label>
+  <br>
+  <input type="radio" name="Q1" id="0" value="0">
+  <label for="0">0</label>
+  <input type="radio" name="Q1" id="1" value="1">
+  <label for="1">1</label>
+  <input type="radio" name="Q1" id="2" value="2">
+  <label for="2">2</label>
+  <input type="radio" name="Q1" id="3" value="3">
+  <label for="3">3</label>
+  <input type="radio" name="Q1" id="4" value="4">
+  <label for="4">4</label>
+  <input type="radio" name="Q1" id="5" value="5">
+  <label for="5">5</label>
+  <label id="Q1-error" class="error" for="Q1"></label>
+  <br>
+  <br>
+  <label for="pic16b">
+    How much do you care about the crime rate in your ideal housing location?<br>
+      (5 means you wish to have the house in cities of lowest crime rate, 0 means you don't care about this question)
+  </label>
+  <br>
+  <input type="radio" name="Q2" id="0" value="0">
+  <label for="0">0</label>
+  <input type="radio" name="Q2" id="1" value="1">
+  <label for="1">1</label>
+  <input type="radio" name="Q2" id="2" value="2">
+  <label for="2">2</label>
+  <input type="radio" name="Q2" id="3" value="3">
+  <label for="3">3</label>
+  <input type="radio" name="Q2" id="4" value="4">
+  <label for="4">4</label>
+  <input type="radio" name="Q2" id="5" value="5">
+  <label for="5">5</label>
+  <label id="Q2-error" class="error" for="Q2"></label>
+  <br>
+  <br>
+  <label for="pic16b">
+    How much do you care about the rankings of the public high schools in your ideal housing location?<br>
+      (5 means you want the best public education in the housing area, 0 means you don't care about this question)
+  </label>
+  <br>
+  <input type="radio" name="Q3" id="0" value="0">
+  <label for="0">0</label>
+  <input type="radio" name="Q3" id="1" value="1">
+  <label for="1">1</label>
+  <input type="radio" name="Q3" id="2" value="2">
+  <label for="2">2</label>
+  <input type="radio" name="Q3" id="3" value="3">
+  <label for="3">3</label>
+  <input type="radio" name="Q3" id="4" value="4">
+  <label for="4">4</label>
+  <input type="radio" name="Q3" id="5" value="5">
+  <label for="5">5</label>
+  <label id="Q3-error" class="error" for="Q3"></label>
+  <br>
+  <br>
+  <label for="pic16b">Do you want your house to be in Northern California or Southern California?</label>
+  <br>
+  <input type="radio" name="Q4" id="1" value="1">
+  <label for="1">Northern California</label>
+  <input type="radio" name="Q4" id="2" value="2">
+  <label for="2">Southern California</label>
+  <br>
+  <label id="Q4-error" class="error" for="Q4"></label>
+  <br>
+  <br>
+  <br>
+  <label for="name">What is your minimum budget for your ideal housing? (Please input a positive number)</label>
+  <input name="minb" id="minb" required>
+  <br>
+  <br>
+  <label for="name">What is your maximum budget for your ideal housing? (Please input a positive number that is greater than your minimum budget)</label>
+  <input name="maxb" id="maxb" required>
+  <br>
+  <br>
+  <input type="submit" value="Submit Answers">
+</form>
 
-
-        <br>
-
-      <br>
-
-      <label for="pic16b">How much do you care about the crime rate in your ideal housing location?
-(5 means you wish to have the house in cities of lowest crime rate, 0 means you don't care about this question)</label>
-<br>
-<input type="radio" name="Q2" id="0" value="0">
-<label for="0">0</label>
-<input type="radio" name="Q2" id="1" value="1">
-<label for="1">1</label>
-<input type="radio" name="Q2" id="2" value="2">
-<label for="2">2</label>
-<input type="radio" name="Q2" id="3" value="3">
-<label for="3">3</label>
-<input type="radio" name="Q2" id="4" value="4">
-<label for="4">4</label>
-<input type="radio" name="Q2" id="5" value="5">
-<label for="5">5</label>
-<label id="Q2-error" class="error" for="Q2"></label>
-
-        <br>
-        <br>
-
-
-      <label for="pic16b">How much do you care about the rankings of the public high schools in your ideal housing location?(1 means you want the best public education in the housing area, 0 means you don't care about this question)</label>
-<br>
-      <input type="radio" name="Q3" id="0" value="0">
-      <label for="0">0</label>
-      <input type="radio" name="Q3" id="1" value="1">
-      <label for="1">1</label>
-      <input type="radio" name="Q3" id="2" value="2">
-      <label for="2">2</label>
-      <input type="radio" name="Q3" id="3" value="3">
-      <label for="3">3</label>
-      <input type="radio" name="Q3" id="4" value="4">
-      <label for="4">4</label>
-      <input type="radio" name="Q3" id="5" value="5">
-      <label for="5">5</label>
-      <label id="Q3-error" class="error" for="Q3"></label>
-
-
-
-
-
-      <br>
-      <br>
-      <label for="pic16b">Do you want your house to be in Northern California or Southern California?
-(1: Northern California, 2: Southern California)</label>
-<br>
-      <input type="radio" name="Q4" id="1" value="1">
-      <label for="1">1</label>
-      <input type="radio" name="Q4" id="2" value="2">
-      <label for="2">2</label>
-
-
-
-      <br>
-      <label id="Q4-error" class="error" for="Q4"></label>
-      <br>
-
-
-
-        <br>
-        <br>
-
-<label for="name">What is your minimum budget for your ideal housing? (Please input a positive number)</label>
-    <input name="minb" id="minb" required>
-    <br>
-    <br>
-
-<label for="name">What is your maximum budget for your ideal housing? (Please input a positive number that is greater than your minimum budget)</label>
-      <input name="maxb" id="maxb" required>
-
- <br>
- <br>
-      <input type="submit" value="Submit Answers">
-     </form>
- <br>
-<br>
- <br>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <title>Title</title>
-  </head>
+<!-- Outputted dataset and plots after a POST REQUEST is sent from submitting the form -->
+<!DOCTYPE html>
+<html lang="en">
   <body>
-  {% for table in tables %}
-              {{ table|safe }}
-  {% endfor %}
-  {% for fig in results %}
-      <img src="{{ fig }}" width="850" vspace="10">
-  {% endfor %}
+    {% if table %}
+      <br>
+      <br>
+      <br>
+      {{ table|safe }}
+      <script>
+        var table = document.getElementById("housing-data").tBodies[0];
+        for (var i = 0, row; row = table.rows[i]; i++) {
+          var link = document.createElement('a');
+          link.style.color = "blue";
+          link.href = "#" + row.cells[2].innerHTML;
+          link.innerHTML = row.cells[2].innerHTML;
+          row.cells[2].innerHTML = "";
+          row.cells[2].appendChild(link);
+        }
+      </script>
+    {% endif %}
+    {% if zip_figures %}
+      <p>The following figures predict housing price trends.
+        <br>
+        Click on the links in the <b>Zip</b> column to see the figure corresponding to each zip code.</p>
+      {% for zip, fig in zip_figures %}
+        <img id = "{{ zip }}" src="data:image/png;base64,{{ fig }}" width="850" vspace="10">
+        <a href="#housing-data" style="float:right;color:blue">Back to the Table</a>
+      {% endfor %}
+      <br>
+      <br>
+    {% endif %}
   </body>
-  </html>
-
+</html>
 {% endblock %}

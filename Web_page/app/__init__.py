@@ -1,8 +1,7 @@
-from flask import Flask, g, render_template, request
+from flask import Flask, render_template, request
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 
 from .housewares import housewares_bp, close_hw_db
@@ -39,16 +38,24 @@ def ask():
         return render_template('ask.html')
     else:
         try:
+            # upon POST request, get the answers to the questionaire form
             Q1_ans = request.form['Q1']
             Q2_ans = request.form['Q2']
             Q3_ans = request.form['Q3']
             Q4_ans = request.form['Q4']
             Min_ans = request.form['minb']
             Max_ans = request.form['maxb']
-            desired_alldates = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
-            desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans),True)
-            figs = create_figures(desired_alldates)
-            return render_template('ask.html',tables=[desired.to_html(classes='data')], titles=desired.columns.values, results=figs)
+
+            # extract the desired pandas dataframe based on the answers to the questionaire form
+            desired = query_function(int(Q1_ans),int(Q2_ans),int(Q3_ans),int(Q4_ans),int(Min_ans),int(Max_ans))
+            
+            # get the html format of the desired dataset
+            desired_html_table = desired.to_html(classes='data', table_id="housing-data",justify="center")
+            
+            # extract the list of (zip code, figure) tuples corresponding to the desired data
+            zip_figures = create_figures(desired)
+            
+            return render_template('ask.html',table=desired_html_table, zip_figures=zip_figures)
         except:
             return render_template('ask.html')
 
