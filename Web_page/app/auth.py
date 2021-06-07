@@ -1,17 +1,31 @@
+# ******************************************************************************
+#  * FILE NAME: auth.py
+#  * DESCRIPTION: This python script includes all the modules necessary for
+#  *              the Log In, Register, and User pages of the website.
+#  ******************************************************************************
+
 from flask import Blueprint, current_app, g, render_template, redirect, request, flash, url_for, session
 from flask.cli import with_appcontext
 from werkzeug.security import check_password_hash, generate_password_hash
 import sqlite3, click, random, string
 
+# create a Blueprint object that determines the url of the page
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 def get_auth_db():
+    """
+    connects to the username/password database
+    :return: the username/password database
+    """
     if 'db' not in g:
         g.auth_db = sqlite3.connect('users.sqlite')
 
     return g.auth_db
 
 def close_auth_db(e=None):
+    """
+    closes the username/password database
+    """
     db = g.pop('auth_db', None)
 
     if db is not None:
@@ -36,6 +50,7 @@ def init_auth_db_command():
 def main():
     return render_template('auth/main.html')
 
+# Responses given upon POST and GET requests in the Login page
 @auth_bp.route('/login/', methods=['POST', 'GET'])
 def login():
     if 'user_id' in session:
@@ -68,6 +83,7 @@ def login():
 
     return render_template('auth/login.html')
 
+# Responses given upon POST and GET requests in the Register page
 @auth_bp.route('/register/', methods=['POST', 'GET'])
 def register():
     if 'user_id' in session:
@@ -103,6 +119,7 @@ def register():
 
     return render_template('auth/register.html')
 
+# Responses given upon POST and GET requests in the User page
 @auth_bp.route('/user/', methods=['POST', 'GET'])
 def user():
     if 'user_id' not in session:

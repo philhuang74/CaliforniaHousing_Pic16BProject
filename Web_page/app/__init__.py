@@ -1,3 +1,9 @@
+# ******************************************************************************
+#  * FILE NAME: __init__.py
+#  * DESCRIPTION: This python script is a blueprint that maps the routes
+#  *              of the website of our project.
+#  ******************************************************************************
+
 from flask import Flask, render_template, request
 from .auth import auth_bp, close_auth_db, init_auth_db_command
 from .queryfunction import query_function

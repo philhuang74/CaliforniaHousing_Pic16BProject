@@ -1,10 +1,7 @@
 html {
-    /* font-family: sans-serif;
-    background: AntiqueWhite;
-    padding: 1rem; */
     font-family: "Times New Roman";
-   background:green;
-   padding: 1rem;
+    background:green;
+    padding: 1rem;
 }
 
 body {
@@ -17,7 +14,6 @@ h1 {
     font-family: "Times New Roman";
     margin: 1rem 0;
     text-align: center;
-
 }
 
 a {
@@ -34,7 +30,6 @@ nav {
     background: lightgray;
     padding: 0 0.5rem;
     border-radius: 0px;
-
 }
 
 
@@ -44,7 +39,7 @@ nav ul  {
     padding: 0;
     overflow: hidden;
     background-color: rgb(175, 198, 241);
-      background-image: linear-gradient(150deg,rgba(55,255,255,0) 35%,#8dc63f 35%);
+    background-image: linear-gradient(150deg,rgba(55,255,255,0) 35%,#8dc63f 35%);
 }
 
 nav ul li {
