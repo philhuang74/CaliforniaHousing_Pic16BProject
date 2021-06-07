@@ -1,13 +1,7 @@
 from flask import Blueprint, current_app, g, render_template, redirect, request, flash, url_for, session
 from flask.cli import with_appcontext
-
 from werkzeug.security import check_password_hash, generate_password_hash
-
-import sqlite3
-import click
-
-import random
-import string
+import sqlite3, click, random, string
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 
